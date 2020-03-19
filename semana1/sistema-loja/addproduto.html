@@ -4,25 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Produto</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1>Adicionar produto</h1>
-    <form> 
-        <label for="imagem">Imagem:</label>
-        <input type="file" accept="image/*" alt="Submit">
-        <br>
-        <label for="descricao">Descrição: </label>
-        <input type="text" name="descricao" id="descricao">
-        <br>
-        <label for="preco">Preço: </label>
-        <input type="text" name="preco" id="preco">
-        <br>
-        <label for="quantidade">Quantidade: </label>
-        <input type="text" name="quantidade" id="quantidade">
-        <br>
-        <input type="submit" value="ENVIAR">
-    </form>
-    <button><a href="home.html">voltar</a></button>
+    <div class="row">
+        <div class="column left">
+            <img width="150px" src="logo.png" alt="">
+            <h2>Usuário</h2>
+            <div class="menu-vertical">
+                <a href="estoque.html">ESTOQUE</a>
+                <a href="estoque.html"><a href="addproduto.html">PRODUTOS</a>
+                    <a href="estoque.html"><a href="funcionarios.html">NOSSA EQUIPE</a>
+            </div>
+        </div>
+        <div class="column right" style="background-color:#ffab2c;">
+            <header>
+                <h1>cabeçalho</h1>
+            </header>
+            <h1>Adicionar produto</h1>
+            <form>
+                <label for="imagem">Imagem:</label>
+                <input type="file" accept="image/*" alt="Submit">
+                <br>
+                <label for="descricao">Descrição: </label>
+                <input type="text" name="descricao" id="descricao">
+                <br>
+                <label for="preco">Preço: </label>
+                <input type="text" name="preco" id="preco">
+                <br>
+                <label for="quantidade">Quantidade: </label>
+                <input type="text" name="quantidade" id="quantidade">
+                <br>
+                <input type="submit" value="ENVIAR">
+            </form>
+            <button><a href="home.html">voltar</a></button>
+            <br><br><br><br>
+        </div>
+    </div>
+
+    <footer>
+        <p>rodapé</p>
+    </footer>
 
 </body>
 </html>
