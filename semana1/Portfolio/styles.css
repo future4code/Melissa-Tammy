@@ -1,0 +1,40 @@
+
+*{
+    margin: 0;
+    font-family: arial;
+
+}
+
+header{
+    margin:0;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    background-color: #ffffff;
+  }
+
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  
+  li.limenu{
+    float: right;
+  }
+  
+  li a{
+    margin: 0;
+    padding: 0vw 1.5vw;
+    color: #000000;
+    font-size:16px;
+    font-family: arial;
+    text-align: center;
+    text-decoration: none;
+    font-weight:bold;
+  }
+  
+  .cinza{
+      background-color: #eeeeee;
+  }
