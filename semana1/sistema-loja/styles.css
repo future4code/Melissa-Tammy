@@ -1,8 +1,26 @@
 
+
+
 *{
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: monospace;
     padding: 0;
+    margin: 0;
+}
+h1{
+    font-size: 2em;
+}
+form{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label{
+    margin-left: 40%;
+}
+
+h1{
     margin: 0;
 }
 .center{
@@ -20,9 +38,11 @@
 
 .column {
     float: left;
-    padding: 10px;
+    padding: 0;
     height: 10%; 
     margin: 0;
+    border: 0;
+    bottom:0;
     text-align: center;
   }
   
@@ -41,14 +61,16 @@
     width: 80%;
 }
 .menu-vertical a {
+    font-size: 2em;
     display: block;
-    text-align: left;
+    text-align: center;
     padding: 5px;
-    margin: 0;
+    margin: 1vw;
     text-decoration: none;
+    color: black;
 }
 .menu-vertical a:hover{
-    background-color: #ccc;
+    background-color: rgba(255, 202, 29, 0.356);
 }
 .menu-vertical a.active {
     background-color: #4CAF50;
@@ -59,18 +81,27 @@ footer{
     padding: 10px;
     text-align: center;
     color: white;
+    position:absolute;
+    bottom:0;
+    border-bottom: 60px;
+    margin: 0;
+    width:100%;
 }
 header {
-    background-color: #ffffff;
-    padding: 5px;
+    background-color: #ffffff9c;
+    padding: 0;
     margin: 0;
+    width: 100%;
     text-align: center;
-    font-size: 35px;
+    font-size: 20px;
     color:black;
   }
 
   table{
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
+      font-size: 1.5em;
       background-color: rgba(255, 255, 255, 0.377);
   }
   th{
@@ -79,9 +110,5 @@ header {
       background-color: white;
   }
   tr{
-      width: 10000px;
-  }
-  td{
-      width: 100px;
-      
+      width: 100%;
   }
