@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Produto</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
     <div class="row">
         <div class="column left">
@@ -20,25 +22,19 @@
         </div>
         <div class="column right" style="background-color:#ffab2c;">
             <header>
-                <h1>Adicionar produto</h1>
+                <h1>Cadastro de venda</h1>
             </header>
             <br>
             <form>
-                <label for="imagem">Imagem:</label>
-                <input type="file" accept="image/*" alt="Submit">
-                <br>
-                <label for="descricao">Descrição: </label>
-                <input type="text" name="descricao" id="descricao">
-                <br>
-                <label for="preco">Preço: </label>
-                <input type="text" name="preco" id="preco">
-                <br>
-                <label for="quantidade">Quantidade: </label>
-                <input type="text" name="quantidade" id="quantidade">
-                <br>
-                <input type="submit" value="ENVIAR">
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="male">Male</label><br>
+                <label for="itens">itens: </label>
+                <input type="text" name="descricao" id="descricao"><br>
+
+                <div style="text-align: center;">
+                    <input type="radio" id="debito" name="pagamento" value="debito">
+                    <label style="margin-left: 0; text-align: center;" for="debito">Débito</label>
+                    <input type="radio" id="pagamento" name="pagamento" value="credito">
+                    <label style="margin-left: 0;" for="credito">Crédito</label>
+                </div>
             </form>
 
             <br><br><br><br>
@@ -50,4 +46,5 @@
     </footer>
 
 </body>
+
 </html>
