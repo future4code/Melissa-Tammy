@@ -1,40 +1,79 @@
 
-*{
+body{
     margin: 0;
-    font-family: arial;
-
+    font-family: 'Open Sans';
+    font-size: 22px;
 }
 
 header{
-    margin:0;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    background-color: #ffffff;
-  }
+    background-color: white;
+    box-sizing:border-box;
+    display: inline-block;
+    padding:10px 15px;
+    width:100%;
+    }
+    .logo,.menu{
+    display:inline-block;
+    font-size:0;
+    vertical-align:middle;
+    }
+    .logo{
+    text-align:left;
+    width:30%;
+    }
+    .logo img{
+    max-width:20%;
+    }
+    .menu{
+    text-align:right;
+    width:70%;
+    }
+    .menu ul li{   
+    display:inline-block;
+    font-size:0;
+    vertical-align:middle;
+    }
+    .menu ul li a{
+    color: black;
+    padding-right: 30px;
+    font-size:20px;
+    line-height:10px;
+    text-decoration:none;
+    font-weight: bold
+    }
+    .cinza{
+        background-color: #e9e9e9;
+    }
+    .ajuste{
+        display: block;
+        padding-bottom: 0.5vw;
+        bottom: 0;
+    }
+    footer{
+        background-color: white;
+        box-sizing:border-box;
+        display: inline-block;
+        padding:10px 15px;
+        width:100%;
+        text-align: left;
+        }
 
-  ul{
-    list-style-type: none;
+.icon{
+    display:inline-block;
+    font-size:0;
+    vertical-align:middle;
+    text-align:right;
+    width:30%;
+}
+.icon img{
+        max-width:10%;
+}
+
+.container{
     margin: 0;
     padding: 0;
-    overflow: hidden;
-  }
-  
-  
-  li.limenu{
-    float: right;
-  }
-  
-  li a{
-    margin: 0;
-    padding: 0vw 1.5vw;
-    color: #000000;
-    font-size:16px;
-    font-family: arial;
-    text-align: center;
-    text-decoration: none;
-    font-weight:bold;
-  }
-  
-  .cinza{
-      background-color: #eeeeee;
-  }
+    font-size: 12px;
+    text-align: right;
+    color: #f7f7f7;
+}
+    

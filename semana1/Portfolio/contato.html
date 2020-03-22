@@ -6,25 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melissa Tammy</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 </head>
 
 <body>
-    <header>
-            <!--<img style="width: 5%;" src="logo.png" alt="">-->
-        <ul>
-            <li class="limenu"><a href="contato.html">CONTATO</a></li>
-            <li class="limenu"><a href="about.html">SOBRE MIM</a></li>
-            <li class="limenu"><a href="port.html">PORTFOLIO</a></li>
-            <li class="limenu"><a href="index.html">HOME</a></li>
-        </ul>
-    </header>
+    <header id="header">
+        <div class="logo"><img src="logo.png" /></div><!--Quando eu mudo
+         o nav de linha, os links vão para o cento da página
+        --><nav class="menu">
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="port.html">PORTFOLIO</a></li>
+                <li><a href="contato.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        </header>
 
 
-    <div class="cinza">
+    <div class="cinza"><br>       
+        <h1 style="text-align: center; margin-left: 25px;"> Entre em contato!</h1>
+
         
+        <div class="container1">  
+            <form action="#" class="form-contact" method="post" tabindex="1">  
+            <input type="text" class="form-contact-input" name="nome" placeholder="Nome" required />  
+            <input type="email" class="form-contact-input" name="email" placeholder="Email" required />  
+            <textarea class="form-contact-textarea" name="conteudo" placeholder="Deixe uma mensagem" required></textarea>  
+            <button type="submit" class="form-contact-button">Enviar</button>  
+            </form>  
+        </div>  
+        <br>
+    </div>  
 
-
-    </div>
+    <footer id="footer">
+        <div class="container">
+            <div class="icon">
+                <a href="https://github.com/meltammy"><img src="github.png" alt=""></a>
+                <img src="esp.png" alt="">
+                <a href="https://www.linkedin.com/in/melissa-tammy-mel%C3%B4nio-438309182/"><img src="linkedin.png"
+                        alt=""></a>
+                <img src="esp.png" alt="">
+                <a href="mailto:mel.tammy2@gmail.com?subject=Assunto""><img src="mail.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
 
 
 </body>

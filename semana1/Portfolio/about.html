@@ -6,38 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melissa Tammy</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 </head>
 
 <body>
-    <header>
-        <!--<img style="width: 5%;" src="logo.png" alt="">-->
-        <ul>
-            <li class="limenu"><a href="contato.html">CONTATO</a></li>
-            <li class="limenu"><a href="about.html">SOBRE MIM</a></li>
-            <li class="limenu"><a href="port.html">PORTFOLIO</a></li>
-            <li class="limenu"><a href="index.html">HOME</a></li>
-        </ul>
+    <header id="header">
+        <div class="logo"><img src="logo.png" /></div><!--Quando eu mudo
+         o nav de linha, os links vão para o cento da página
+        --><nav class="menu">
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="port.html">PORTFOLIO</a></li>
+                <li><a href="contato.html">CONTACT</a></li>
+            </ul>
+        </nav>
     </header>
 
 
     <div class="cinza">
-        <img width="20%" src="hello.png" alt="">
-        <br><br><br>
-        <h3 style="text-align: left; margin-left: 25px;"><br>21 anos, residente em São Paulo, apaixonada por biologia, <br> fotografia e
-            tecnologia.
-            Ex-aluna de Ciências Biológicas,
-            atualmente cursando <br> Analise e Desenvolvimento de Sistemas e Desenvolvimento Web Full Stack.
-        </h3>
-        <br> <br> <br> <br> <br>
-        <ol>
-            <h2>ENSINO</h2>
-            <li>Universidade Federal de São Paulo</li>
-            <li>Universidade Paulista</li>
-            <li>Future4</li>
+        <div class="row">
+            <div class="column left">
+                <h1 style=" text-align: left; margin-left: 25px;"> Hello, world!</h1>
+                <p style="text-align: left; margin-left: 25px;">
+                    meu nome é Melissa Tammy Melônio, mas pode me chamar de Mel.
+                    Eu tenho 21 anos, sou desenvolvedora web Full Stack e analista
+                    de sistemas em formação. Eu era estudante de biologia, mas dei
+                    uma uma pausa para me dedicar à programação. Sou também fotógrafa
+                    nas horas vagas, amo fotografia de espetáculos, astrofotografia e
+                    fotografia científica.
+                </p>
+                        
+        <br>
+
+        <h2>Linguagens e Programas</h2>
+        <ul>
+            <li>CSS</li>
+            <li>HTML</li>     
+            <li>JavaScript</li> 
+            <li>C</li>
+            <li>C#</li>
+            <li>Lightroom</li> 
+            <li>Photoshop</li> 
         </ul>
 
+    </ul>
+    <ul>
+        <h2>Habilidades</h2>
+        <li> <b>Resiliência</b> <br> capacidade de lidar com desafios, dificuldades e adaptar-se a mudanças.</li>
+        <li> <b> Boa ouvinte</b> <br> ouvir sem julgar, colocando-se no lugar das pessoas.</li>            
+        <li><b>Empatia</b> <br> compreensão dos sentimentos e emoções do próximo, ajudando a compreender o comportamento alheio.</li>
+        <li><b>Coletividade</b> <br> senso de sociedade como uma comunidade</li>
 
+    </ul>
+
+
+                
+            </div>
+            <div class="column right cinza">
+                <br>
+                <img src="me1.png" style="width: 30vw;" alt="">
+            </div>
+        </div>
     </div>
+
+
+    <footer id=" footer">
+        <div class="container">
+            <div class="icon">
+                <a href="https://github.com/meltammy"><img src="github.png" alt=""></a>
+                <img src="esp.png" alt="">
+                <a href="https://www.linkedin.com/in/melissa-tammy-mel%C3%B4nio-438309182/"><img src="linkedin.png"
+                        alt=""></a>
+                <img src="esp.png" alt="">
+                <a href="mailto:mel.tammy2@gmail.com?subject=Assunto""><img src="mail.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
 
 
 </body>
