@@ -6,36 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Produto</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+
 </head>
 
 <body>
     <div class="row">
         <div class="column left">
-            <img width="220px" src="logo.png" alt="">
+            <img class="center" width="250px" src="med.png" alt="">
             <div class="menu-vertical">
                 <a href="home.html">Home</a>
                 <a href="venda.html">Pedido</a>
                 <a href="estoque.html">Estoque</a>
-                <a href="addproduto.html">Produtos</a>
+                <a href="addproduto.html">+ Produtos</a>
                 <a href="funcionarios.html">Nossa equipe</a>
             </div>
         </div>
-        <div class="column right" style="background-color:#ffab2c;">
+        <div class="column right" style="background-color:#94d7d2; padding-bottom: 0;">
             <header>
                 <h1>Cadastro de venda</h1>
             </header>
             <br>
-            <form>
-                <label for="itens">itens: </label>
-                <input type="text" name="descricao" id="descricao"><br>
+            <div class="container">  
+                <form action="#" class="form-contact" method="post" tabindex="1">  
+                   <input type="text" class="form-contact-input" name="cliente" placeholder="Nome do cliente" required />  
+                   <input type="text" class="form-contact-input" name="funcionario" placeholder="Nome do Funcionario" required />  
+                   <input type="time" class="form-contact-input" name="email" placeholder="Email" required />  
+                   <input type="date" class="form-contact-input" name="email" placeholder="Email" required />  
+                   <input type="text" class="form-contact-input" name="pagamento" placeholder="forma de pagamento" required />  
 
-                <div style="text-align: center;">
-                    <input type="radio" id="debito" name="pagamento" value="debito">
-                    <label style="margin-left: 0; text-align: center;" for="debito">Débito</label>
-                    <input type="radio" id="pagamento" name="pagamento" value="credito">
-                    <label style="margin-left: 0;" for="credito">Crédito</label>
-                </div>
-            </form>
+
+                   <br><br>
+                   <textarea class="form-contact-textarea" name="conteudo" placeholder="Produtos" required></textarea>  
+                   <button type="submit" class="form-contact-button">Cadastrar pedido</button>  
+                </form>  
+              </div>  
 
             <br><br><br><br>
         </div>
