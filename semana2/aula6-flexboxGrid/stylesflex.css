@@ -13,58 +13,70 @@
 
 #B10DC9 roxo
 */
+*{
+    text-align: center;
 
+}
 .container{
     max-width: 100%;
     background-color: #A8BBC6;
     display: flex;
     flex-direction: column;
-    bottom: 0;
-
 }
-.linha1{
+
+#linhaheader{
     display: flex;
-
+    align-items: flex-start;
 }
-
 #header{
     background-color: #01FF70;
-    width: 25px;
+    display: flex;
+    width: 25%;
+
 }
 #menu{
     background-color: #FFDC00;
     width: 75%;
-    flex-wrap: wrap;
-
-   
+    display: flex;
 }
+
+
+
+
 #content1{
     background-color: #F012BE;
-    width: 50%;
-    display: flex;
-    flex-wrap: wrap;
+    width: 100%;
     align-self: center;
 }
 #content2{
     background-color: #0074D9;
-    width: 10%;
+    width: 50vw;
 }
 #image{
     background-color: #FF4136;
+    width: 25vw;
+    display: flex;
+    align-items: flex-start;
+
 }
 #extra{
     background-color: #01FF70;
-    justify-content: flex-end;
+    width: 25vw;
+    display: flex;
+    align-items: flex-end;
 
 }
 #footer{
    background-color: #B10DC9;
    display: flex;
    align-items: flex-end;
-   width: 50%;
+   width: 100%;
 }
-#coluna{
-    flex-direction: column;
-    display: flex;
 
+
+
+#linhameio{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
