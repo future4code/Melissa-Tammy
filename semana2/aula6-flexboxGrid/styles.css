@@ -1,0 +1,70 @@
+/* 
+#2ECC40 verde header
+
+#FFDC00 amarelo
+
+#F012BE rosa
+
+#0074D9 Azul
+
+#FF4136 vermelho
+
+#01FF70 verde
+
+#B10DC9 roxo
+*/
+
+.container{
+    max-width: 100%;
+    background-color: #A8BBC6;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+
+}
+.linha1{
+    display: flex;
+
+}
+
+#header{
+    background-color: #01FF70;
+    width: 25px;
+}
+#menu{
+    background-color: #FFDC00;
+    width: 75%;
+    flex-wrap: wrap;
+
+   
+}
+#content1{
+    background-color: #F012BE;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+}
+#content2{
+    background-color: #0074D9;
+    width: 10%;
+}
+#image{
+    background-color: #FF4136;
+}
+#extra{
+    background-color: #01FF70;
+    justify-content: flex-end;
+
+}
+#footer{
+   background-color: #B10DC9;
+   display: flex;
+   align-items: flex-end;
+   width: 50%;
+}
+#coluna{
+    flex-direction: column;
+    display: flex;
+
+}
