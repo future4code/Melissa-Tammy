@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    padding: 10px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .left {
+    width: 55%;
+  }
+  
+  .right {
+    padding-left: 10%;
+    width: 45%;
+  }
