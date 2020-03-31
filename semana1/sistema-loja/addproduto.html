@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Produto</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+
 </head>
+
 <body>
     <div class="row">
         <div class="column left">
-            <img width="220px" src="logo.png" alt="">
+            <img class="center" width="250px" src="med.png" alt="">
             <div class="menu-vertical">
                 <a href="home.html">Home</a>
                 <a href="venda.html">Pedido</a>
                 <a href="estoque.html">Estoque</a>
-                <a href="addproduto.html">Produtos</a>
+                <a href="addproduto.html">+ Produtos</a>
                 <a href="funcionarios.html">Nossa equipe</a>
             </div>
         </div>
-        <div class="column right" style="background-color:#ffab2c;">
+        <div class="column right" style="background-color:#94d7d2; padding-bottom: 14vw;">
             <header>
                 <h1>Adicionar produto</h1>
             </header>
             <br>
-            <form>
-                <label for="imagem">Imagem:</label>
-                <input type="file" accept="image/*" alt="Submit">
-                <br>
-                <label for="descricao">Descrição: </label>
-                <input type="text" name="descricao" id="descricao">
-                <br>
-                <label for="preco">Preço: </label>
-                <input type="text" name="preco" id="preco">
-                <br>
-                <label for="quantidade">Quantidade: </label>
-                <input type="text" name="quantidade" id="quantidade">
-                <br>
-                <input type="submit" value="ENVIAR">
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="male">Male</label><br>
-            </form>
+            <br><br><br><br><br><br>
+            <div class="container">
+                <form action="#" class="form-contact" method="post" tabindex="1">
+                    <input type="file" accept="image/" name="nome" />
+                    <br>
+                    <br>                    <input type="text" class="form-contact-input" name="descricao" placeholder="descrição" required />
+                    <input type="number" class="form-contact-input" name="preco" placeholder="preço" />
+                    <input type="number" class="form-contact-input" name="qtd" placeholder="quantidade" />
+
+                    <button type="submit" class="form-contact-button">Enviar</button>
+
+                </form>
+            </div>
 
             <br><br><br><br>
         </div>
@@ -50,4 +50,5 @@
     </footer>
 
 </body>
+
 </html>
