@@ -157,3 +157,91 @@ ________________________________________________________________________________
 Árvore condicional: https://drive.google.com/open?id=1KG5NKZGwWkZPI5HQ31izzq7U-BR5FKHd
 
 ________________________________________________________________________________________________________________________*/
+
+/************** D E S A F I O *************
+const nome = prompt("Nome:")
+let tipo = prompt("Internacional ou domestico? [IN/DO]")
+let etapa = prompt("Tipo de jogo [SF/DT/FI]:")
+let categoria = Number(prompt("Categoria [1/2/3/4]"))
+let ingressos = Number(prompt("Quantidade de ingressos:"))
+let tipoaux = tipo;
+let etapaaux = etapa;
+let categoriaaux = categoria;
+let ingressosaux = ingressos;
+let precouni = 0;
+let precototal = 0;
+switch (etapa){
+    case "SF":
+        etapaaux = "Etapa do jogo: Semifinais"
+        switch (categoria){
+            case 1:
+                precouni = 1320;
+                break;
+            case 2:
+                precouni = 880;
+                break;
+
+            case 3:
+                precouni = 550;
+                break;
+
+            case 4:
+                precouni = 220;
+                break;
+        }
+        break;
+    case "DT":
+        etapaaux = "Etapa do jogo: Decisão do terceiro lugar"
+        switch (categoria){
+            case 1:
+                precouni = 660;
+                break;
+            case 2:
+                precouni = 440;
+                break;
+
+            case 3:
+                precouni = 330;
+                break;
+
+            case 4:
+                precouni = 170;
+                break;
+        }
+        break;
+    case "FI":
+        etapaaux = "Etapa do jogo: Finais"
+        switch (categoria){
+            case 1:
+                precouni = 1980;
+                break;
+            case 2:
+                precouni = 1320;
+                break;
+
+            case 3:
+                precouni = 880;
+                break;
+
+            case 4:
+                precouni = 330;
+                break;
+        break;
+        }
+}
+switch (tipo){
+    case "IN":
+        tipoaux = "Tipo do jogo: Internacional"
+        precouni *= 5.21
+        break;
+    case "DO":
+        tipoaux = "Tipo do jogo: Nacional"
+        break;
+}
+console.log("Nome do cliente: " + nome)
+console.log(tipoaux)
+console.log(etapaaux)
+console.log("Categoria: " + categoria)
+console.log("Quantidade de ingressos: " + ingressos)
+console.log("Valor do ingresso: "+ precouni)
+console.log("Valor Total: "+ precouni * ingressos);*/
