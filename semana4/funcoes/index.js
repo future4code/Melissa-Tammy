@@ -91,6 +91,7 @@ console.log(dogAge(4))
 function dogAge (humanAge){
     return humanAge*7
 }
+
 let rEstudante = " e sou estudante."
 let nome = prompt("Qual é o seu nome?")
 let idade = Number(prompt("Qual é a sua idade?"))
@@ -111,9 +112,8 @@ function about(nome, idade, endereco, estudante){
 
 
 /************ EXERCÍCIO 5 **********
-// let ano = Number(prompt("Digite o ano:"))
 let ano = prompt("ano")
-let frase = "O ano "  + " pertence ao século "
+let frase = "O ano " + ano + " pertence ao século "
 let aux = 0
 seculo(ano)
 function seculo(ano) {
