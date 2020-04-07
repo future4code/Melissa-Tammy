@@ -51,6 +51,13 @@ header{
 
 
 }
+#limpar{
+    display: flex;
+    float: rigth;
+    width: 10%;
+    border-radius: 1vw;
+    font-family: 'Pacifico', cursive;
+}
 .main-container{
     grid-row: 1 span;
     display: grid;
@@ -86,9 +93,6 @@ header{
 .main-container p{
     display: block;
     height: auto;
-}
-.main-container p:onclick{
-    background-color: darkblue;
 }
 .main-container article{
     font-family: 'Indie Flower', cursive;
