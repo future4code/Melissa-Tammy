@@ -87,6 +87,9 @@ header{
     display: block;
     height: auto;
 }
+.main-container p:onclick{
+    background-color: darkblue;
+}
 .main-container article{
     font-family: 'Indie Flower', cursive;
     grid-row: 2/3;
