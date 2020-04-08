@@ -1,0 +1,74 @@
+body{
+    background-color: rgb(0, 22, 51);
+
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px rgba(0, 0, 0, 0.288) solid;
+}
+header h1, header a{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 2vw;
+    font-size: 10vw;
+    color: white;
+    text-decoration: none;
+}
+header button{
+    font-family: Arial;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 5vw;
+    background-color: rgb(159, 204, 33);
+}
+.main-container{
+    background-color: rgb(0, 22, 51);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#post{
+    border-radius: 2vw;
+    padding: 1vw;
+    margin-top: 5vw;
+    width: 50vw;
+    border: 2px black solid;
+}
+footer{
+    background-color: cornflowerblue;
+}
+#formPost{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px rgba(0, 0, 0, 0.329) solid;
+}
+#inputTitulo, #inputTexto, #botaoPostar{
+    text-align: center;
+    width: 60vw;
+    border: none;
+}
+#inputTitulo{
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+    margin-top: 1vw;
+    height: 4vw;
+    border-bottom: 1px rgba(0, 0, 0, 0.075) solid;
+}
+#inputTexto{
+    height: 20vw;
+}
+#botaoPostar{
+    border-bottom-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    margin-bottom: 1vw;
+    height: 4vw;
+    background-color: rgb(159, 204, 33);
+    margin-bottom: 5vw;
+}
+#post{
+    background-color:white;
+}
