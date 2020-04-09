@@ -40,7 +40,6 @@ function criar(tarefaInput) {
         }
     }
     document.getElementById("tarefaInput").value = ""
-
 }
 function validacao(tarefaInput) {
     tarefaInput = document.getElementById("tarefaInput").value
@@ -81,4 +80,8 @@ function riscar(paragrafo) {
 }
 function limpar(){
     location.reload()
+}
+let addHora = document.getElementById("hora")
+for (let i=1; i<25; i++){
+    addHora.innerHTML += "<option value='" + i + "h" + "'>" + i + "h" + "</option>"
 }
