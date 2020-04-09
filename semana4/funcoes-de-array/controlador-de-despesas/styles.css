@@ -1,0 +1,16 @@
+section{
+    display: flex;
+    flex-direction: column;
+    border: 1px black solid;
+    padding: 1vw;
+}
+#section-despesas, #section-extrato{
+    margin-top: 2vw;
+}
+label{
+    margin-top: 1vw;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
