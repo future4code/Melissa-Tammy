@@ -3,6 +3,20 @@ section{
     flex-direction: column;
     border: 1px black solid;
     padding: 1vw;
+    padding-bottom: 4vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    border-radius: 5vw;
+    background-color: rgba(255, 199, 79, 0.493);
+}
+button{
+    margin-top: 2vw;
+    height: 5vw;
+    width: 40%;
+    align-self: center;
+    border-radius: 20px;
+    background-color: rgba(61, 255, 223, 0.336);
+    outline: none;
 }
 #section-despesas, #section-extrato{
     margin-top: 2vw;

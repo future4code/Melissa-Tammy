@@ -12,32 +12,39 @@
     <section id="section-cadastro">
         <h1>Controlador de Despesas</h1>
         <label for="valor">Valor: R$</label>
-        <input id="input-valor" type="text">
+        <input id="input-valor" type="text" placeholder="insira o valor">
         <label for="tipoDaDespesa"> Tipo da despesa</label>
-        <select name="tipoDaDespesa" id="tipoDaDespesa">
-            <option value=""> Despesas de casa </option>
-            <option value=""> Despesas de Alimentação </option>
-            <option value=""> Despesas de Transporte </option>
+        <select name="tipoDaDespesa" id="tipoDeDespesa">
+            <option value=""> Selecione o tipo de despesa </option>
+            <option value="1"> Despesas de casa </option>
+            <option value="2"> Despesas de Alimentação </option>
+            <option value="3"> Despesas de Transporte </option>
         </select>
         <label for="descricao">Descrição</label>
         <textarea name="descricao" id="textAreaDescricao" cols="3"  rows="3"></textarea>
-        <button>Inserir Despesa</button>
+        <button id="botaoDespesas" onclick="inserirDespesas()">Inserir Despesa</button>
     </section>
 
-    <section id="section-despesas">
+    <!-- <section id="section-despesas">
         <h1>Despesas Detalhadas</h1>
         <select name="tipoDaDespesa" id="tipoDaDespesa">
+            <option value=""> Selecione o tipo de despesa </option>
             <option value=""> Despesas de casa </option>
             <option value=""> Despesas de Alimentação </option>
             <option value=""> Despesas de Transporte </option>
-        </select>
-        <div id="container-filtro"></div>
-        <button>Filtrar</button>
+        </select> 
+        <div id="container-filtro">
+
+        </div>
+        <button id="botaoFiltrar">Filtrar</button>
 
     </section>
-
+-->
     <section id="section-extrato">
         <h1>Extrato</h1>
+        <div id="container-extrato">
+
+        </div>
         <h3>Valor total:</h3>
     </section>
     </div>
