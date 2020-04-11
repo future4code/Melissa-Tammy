@@ -60,7 +60,7 @@ valor. Os objetos se diferem das arrays quando observamos o agrupamento dos dado
 os itens de uma array não tem relações diretas (exceto as posições), já nos objetos,
 cada atributo faz parte do objeto e depende da sua existência para fazer sentido 
 como informação. Podem ser usados quando os dados devem ser agrupados e ligados a 
-uma entidade, exemplo: classe: pessoas, objeto: Melissa{nome: Melissa TM, idade:21}.
+uma entidade, exemplo: classe: pessoas, objeto: Melissa{nome: "Melissa TM", idade:21}.
 */
 
 /************ EXERCÍCIO 2 ************
@@ -88,4 +88,21 @@ for (let nome of filme.personagens){
     arrayPersonagem += nome + ", "
 }
 console.log(`Venha assistir ao filme ${filme.titulo}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${arrayPersonagem}`)
+*/
+
+/************ EXERCÍCIO 4 ************
+let pessoa = {
+    nome: "Melissa TM", 
+    idade: 21,
+    email: "abobrinha@generico.com",
+    endereco: "221B Baker Street"
+}
+function anonimizarPessoa(objeto){
+    let anonimo = {
+        ...pessoa,
+        nome: "ANONIMO"
+    }
+    console.log(anonimo) 
+}
+anonimizarPessoa(pessoa)
 */
