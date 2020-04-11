@@ -106,3 +106,23 @@ console.log(triangulo(2, 1, 2))
 console.log(triangulo(2, 1, 3))
 */
 
+/************ EXERCÍCIO 4 ************
+function maiormenor(num1, num2) {
+    if (num1 > num2) {
+        console.log(`O maior é ${num1}`)
+    } else {
+        console.log(`O maior é ${num2}`)
+    }
+    if ((num1 % num2) === 0) {
+        console.log(`${num1} é divisivel por ${num2}`)
+    } else {
+        console.log(`${num1} não é divisivel por ${num2}`)
+    }
+    if ((num1 - num2) < 0) {
+        console.log("A diferença entre eles é " + ((num1 - num2) * -1))
+    } else {
+        console.log("A diferença entre eles é " + (num1 - num2))
+    }
+}
+console.log(maiormenor(2, 100))
+*/
