@@ -75,3 +75,17 @@ function criarRetangulo(base, altura){
 }
 criarRetangulo(4, 5)
 */
+
+/************ EXERCÍCIO 3 ************
+const filme = {
+    titulo: "Zootopia",
+    ano: 2016,
+    diretor: "Byron Howard e Rich Moore",
+    personagens: ["Judy", "Nick", "Gazelle"]
+}
+let arrayPersonagem = []
+for (let nome of filme.personagens){
+    arrayPersonagem += nome + ", "
+}
+console.log(`Venha assistir ao filme ${filme.titulo}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${arrayPersonagem}`)
+*/
