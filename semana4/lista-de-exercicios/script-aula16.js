@@ -101,3 +101,49 @@ function permissao(array){
 }
 permissao(pessoas)
 */
+
+/************ EXERCÍCIO 5 ************
+const consultas = [
+    { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+    { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+    { nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+    { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+let arrayCancelado = []
+let arrayMarcado = []
+let arrayGenero = ["Sr.", "Sra.", "lembra-lo", "lembra-la"]
+let arrayAux = []
+function mensagem(consultas) {
+    consultas.filter(pessoa => {
+        if (pessoa.cancelada === true) {
+            arrayCancelado.push(pessoa)
+
+        } else {
+            arrayMarcado.push(pessoa)
+
+        }
+    })
+    arrayAux = arrayCancelado
+    arrayCancelado = []
+    arrayAux.filter(pessoa => {
+        if (pessoa.genero === "feminino") {
+            arrayCancelado.push(`Olá, ${arrayGenero[1]} ${pessoa.nome}. Infelizmente, sua consulta marcada para o dia ${pessoa.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`)
+        } else {
+            arrayCancelado.push(`Olá, ${arrayGenero[0]} ${pessoa.nome}. Infelizmente, sua consulta marcada para o dia ${pessoa.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`)
+        }
+    })
+    arrayAux = arrayMarcado
+    arrayMarcado = []
+    arrayAux.filter(pessoa => {
+        if (pessoa.genero === "feminino") {
+            arrayMarcado.push(`Olá, ${arrayGenero[1]} ${pessoa.nome}. Estamos enviando esta mensagem para ${arrayGenero[3]} da sua consulta no dia ${pessoa.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail`)
+        } else {
+            arrayMarcado.push(`Olá, ${arrayGenero[0]} ${pessoa.nome}. Estamos enviando esta mensagem para ${arrayGenero[2]} da sua consulta no dia ${pessoa.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail`)
+        }
+    })
+}
+mensagem(consultas)
+console.log(arrayCancelado, arrayMarcado)
+*/
+
+
