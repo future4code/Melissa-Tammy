@@ -74,3 +74,17 @@ d) !(F && !(F)) || !(T && !(F))= T || F
 e)!(T) && !(!(F)) || ((!(!(!(F))) && !(F) && !(F))= F ||  (T && T && T)
     = T
 */
+
+/************ EXERCÍCIO 2 ************
+O código não funciona porque vai entrar em loop com i=0 e travar imprimindo 0,
+é necessário colocar um i++ ao final do laço, e retirar o <= e colocar <, para 
+imprimir somente os "N primeiros números" positivos multiplicado por 2.
+
+const quantidadeDeNumerosPares = 5
+let i = 0
+while (i < quantidadeDeNumerosPares) {
+    console.log(i * 2)
+    i++
+}
+*/
+
