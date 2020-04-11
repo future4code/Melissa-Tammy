@@ -29,3 +29,29 @@ Retornos do console:
 8
 */
 
+/************ EXERCÍCIO 4 ************
+-Teste de mesa-
+numero = 25
+numero1= 25
+numero2= 25
+numero= 12
+numero1= 12
+numero = 55
+numero2= 55
+numero= 64
+numero2= 64
+numero= 121
+numero2= 121
+
+O código varre a array numeros, inicialmente comparando cada número com 
+infinito(numero1) e 0(numero2), caso o item da array seja menor que numero1,
+a variavel numero1 recebe o valor da variavel numero; caso seja maior que numero2,
+a variável numero2 recebe o valor de numero. Dessa forma, passando por cada item, 
+o numero1 assumirá o item de menor valor da array e o numero2 assumirá o de maior
+valor.
+
+Retorno do console:
+-10
+1590
+__________________________________________________________________________________
+*/
