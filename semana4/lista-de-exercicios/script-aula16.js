@@ -21,3 +21,25 @@ while (percorre < array.length){
     percorre++
 }
 */
+
+/************ EXERCÍCIO 2 ************
+const array = [
+    { nome: "Pedro", idade: 20 },
+    { nome: "João", idade: 10 },
+    { nome: "Paula", idade: 12 },
+    { nome: "Artur", idade: 89 }
+]
+let arrayAdultos = []
+let arrayNovinhos = []
+array.forEach((pessoa, index, array) => {
+    if (pessoa.idade >= 20){
+        arrayAdultos.push(pessoa)
+    } else {
+        arrayNovinhos.push(pessoa)
+
+    }
+    
+})
+console.log(arrayAdultos, arrayNovinhos)
+*/
+
