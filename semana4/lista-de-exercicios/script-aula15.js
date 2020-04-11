@@ -36,3 +36,12 @@ for (i = 0; i < 21; i++) {
     array.push(Math.floor(Math.random() * 100))
 }
 funcaoArray(array)*/
+
+/************ EXERCÍCIO 2 ************
+
+let alerta = function () {
+    window.alert("Hello Future4")
+    return alerta
+}
+alerta()
+*/
