@@ -46,8 +46,10 @@ let alerta = function () {
 alerta()
 */
 
-/*___________E X E R C Í C I O S - O B J E T O S______________________________*
-1. As arrays são semelhantes as listas, armazenam itens (seja objeto, variavel,
+/*___________E X E R C Í C I O S - O B J E T O S______________________________*/
+
+/************ EXERCÍCIO 1 ************
+As arrays são semelhantes as listas, armazenam itens (seja objeto, variavel,
 numero etc) que podem ser acessados pela seguinte sintaxe: nomeDaArray[i], sendo 
 i um numero inteiro que representa a posição do item dentro da array; pode ser
 utilizada quando queremos agrupar dados que possuem classificação/tipo semelhante,
@@ -59,4 +61,17 @@ os itens de uma array não tem relações diretas (exceto as posições), já no
 cada atributo faz parte do objeto e depende da sua existência para fazer sentido 
 como informação. Podem ser usados quando os dados devem ser agrupados e ligados a 
 uma entidade, exemplo: classe: pessoas, objeto: Melissa{nome: Melissa TM, idade:21}.
+*/
+
+/************ EXERCÍCIO 2 ************
+function criarRetangulo(base, altura){
+    let retangulo = {
+        largura: (base),
+        altura: (altura),
+        perimetro: (base+altura)*2,
+        area: (base*altura)
+    }
+    console.log(retangulo)
+}
+criarRetangulo(4, 5)
 */
