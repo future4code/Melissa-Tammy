@@ -7,3 +7,12 @@ O valor impresso no console tendo 100 como parâmetro da função, será "R$100*
 <cotacao inserida pelo usuário>"
 */
 
+
+/************ EXERCÍCIO 2 ************
+A função investeDinheiro retorna a variável valorAposInvestimento, que é o valor 
+inserido multiplicado pela porcentagem de rendimento, de acordo com o tipo de 
+investimento.
+
+conlose.log(novoMontante) retorna: 165
+conlose.log(segundoMontante) retorna: "TIPO DE INVESTIMENTO INFORMADO INCORRETO!"
+*/
