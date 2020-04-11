@@ -16,3 +16,16 @@ investimento.
 conlose.log(novoMontante) retorna: 165
 conlose.log(segundoMontante) retorna: "TIPO DE INVESTIMENTO INFORMADO INCORRETO!"
 */
+
+/************ EXERCÍCIO 3 ************
+O código insere os números da array numeros nas arrays array1 e array2.
+É feita a operação mod 2 de cada item da array numeros, caso o resultado seja 0
+quer dizer que o número é par, e é inserido na array1, se for diferente de 0 
+significa que é impar, e então é inserido na array2.
+
+Retornos do console:
+"Quantidade total de números 14"
+6
+8
+*/
+
