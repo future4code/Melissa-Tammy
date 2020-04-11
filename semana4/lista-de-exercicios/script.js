@@ -88,3 +88,21 @@ while (i < quantidadeDeNumerosPares) {
 }
 */
 
+/************ EXERCÍCIO 3 ************
+
+function triangulo (num1, num2, num3){
+    if ((num1 === num2) || (num2 === num3) || (num1 === num3)){
+        if ((num1 === num2) || (num2 === num3)){
+            return "Equilátero"
+        } else {
+            return "Isósceles"
+        }
+    } else {
+        return "Escaleno"
+    }
+}
+console.log(triangulo(2, 2, 2))
+console.log(triangulo(2, 1, 2))
+console.log(triangulo(2, 1, 3))
+*/
+
