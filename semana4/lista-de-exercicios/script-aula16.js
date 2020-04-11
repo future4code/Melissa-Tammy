@@ -43,3 +43,38 @@ array.forEach((pessoa, index, array) => {
 console.log(arrayAdultos, arrayNovinhos)
 */
 
+/************ EXERCÍCIO 3 ************
+const array = [1, 2, 3, 4, 5, 6]
+let arrayMultiplica = []
+function funcaoMultiplica(array) {
+    array.forEach((numero, index, arr) => {
+        arrayMultiplica.push(numero * 2)
+    })
+    return arrayMultiplica
+}
+let arrayMultiplica3 = []
+function funcaoMultiplica3(array) {
+    array.forEach((numero, index, arr) => {
+        arrayMultiplica3.push(String((numero * 3)))
+    })
+    return arrayMultiplica3
+}
+function funcaoString(array){
+    let arrayAux = []
+    array.forEach((numero, index, arr) => {
+        if (numero % 2 === 0){
+                    arrayAux.push(`${numero} é par`)
+
+        } else {
+            arrayAux.push(`${numero} é impar`)
+
+        }
+    })
+    return arrayAux
+}
+console.log(array)
+console.log(funcaoMultiplica(array))
+console.log(funcaoMultiplica3(array))
+console.log(funcaoString(array))
+*/
+
