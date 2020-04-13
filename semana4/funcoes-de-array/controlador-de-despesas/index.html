@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Aula 16</title>
+</head>
+<body>
+    <div class="container">
+    <section id="section-cadastro">
+        <h1>Controlador de Despesas</h1>
+        <label for="valor">Valor: R$</label>
+        <input id="input-valor" type="number" placeholder="insira o valor sem casas decimais">
+        <label for="tipoDaDespesa"> Tipo da despesa</label>
+        <select name="tipoDaDespesa" id="tipoDeDespesa">
+            <option value=""> Selecione o tipo de despesa </option>
+            <option value="Despesas de casa"> Despesas de casa </option>
+            <option value="Despesas de Alimentacao"> Despesas de Alimentação </option>
+            <option value="Despesas de Transporte"> Despesas de Transporte </option>
+        </select>
+        <label for="descricao">Descrição</label>
+        <textarea name="descricao" id="textAreaDescricao" cols="3"  rows="3"></textarea>
+        <button id="botaoDespesas" onclick="inserirDespesas()">Inserir Despesa</button>
+    </section>
+    <section id="section-despesas">
+        <h1>Despesas Detalhadas</h1>
+        <select name="tipoDaDespesa" id="tipoDaDespesa">
+            <option value="Todas Despesas"> Todas Despesas </option>
+            <option value="Despesas de casa"> Despesas de casa </option>
+            <option value="Despesas de Alimentacao"> Despesas de Alimentação </option>
+            <option value="Despesas de Transporte"> Despesas de Transporte </option>
+        </select> 
+        <div id="container-filtro">
+        </div>
+        <button onclick="funcaoFiltrar()" id="botaoFiltrar">Filtrar</button>
+    </section>
+    <section id="section-extrato">
+        <h1>Extrato</h1>
+        <div id="container-extrato">
+        </div>
+        <h3>Valor total: </h3>
+        <div id="resultadoFinal"></div>
+    </section>
+    </div>
+</body>
+</html>
