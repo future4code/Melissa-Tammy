@@ -6,26 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Inconsolata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
     <title>Blog</title>
 </head>
-
 <body>
     <div class="container">
-        <header>
-            <a href="index.html"><h1><b>t</b></h1></a>
-            <a href="form.html"><button>Create post</button></a>
+        <header id="header-index">
+            <a href="index.html"><h1 id="tDoIndex">t</h1></a>
+            <a class="criar" href="form.html"><button class="criar">Create post</button></a>
+            <button id="atualiza" onclick="atualizarFeed()">Atualizar posts</button>
         </header>
         <main class="main-container">
             <div id="post-container">
-
             </div>
         </main>
-
-        <footer>
-            <h1>Footer</h1>
-        </footer>
-
     </div>
 </body>
-
 </html>
