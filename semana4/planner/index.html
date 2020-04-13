@@ -15,68 +15,70 @@
 <body>
     <div class="container">
         <header>
-            <div class="diadasemana">
+            <div class="dia-semana-input">
                 <label for="dia"> Selecione o dia da semana: </label>
                 <select name="dia" id="dia">
-                    <option value="2"> Segunda </option>
-                    <option value="3"> Terça </option>
-                    <option value="4"> Quarta </option>
-                    <option value="5"> Quinta </option>
-                    <option value="6"> Sexta </option>
-                    <option value="7"> Sábado </option>
-                    <option value="8"> Domingo </option>
+                    <option value="segunda">Segunda</option>
+                    <option value="terca">Terça</option>
+                    <option value="quarta">Quarta</option>
+                    <option value="quinta">Quinta</option>
+                    <option value="sexta">Sexta</option>
+                    <option value="sabado">Sábado</option>
+                    <option value="domingo">Domingo</option>
+                </select>
+            </div>
+            <div class="horarioSelect">
+                <label for="hora"> horário: </label>
+                <select name="hora" id="hora">
                 </select>
             </div>
             <div class="container-input">
                 <input id="tarefaInput" type="text" placeholder="Nova tarefa">
-                <button onclick="criar()">Criar</button>
+                <button onclick="criarTarefa()">Criar</button>
             </div>
-            <button id="limpar" onclick="limpar()">Limpar</button>
         </header>
         <div class="main-container">
-            <div id="segunda">
+            <div class="dia-semana">
                 <h1>Segunda</h1>
-                <article id="segundaTarefa">
+                <article id="segunda">
                 </article>
             </div>
-            <div id="terca">
+            <div class="dia-semana">
                 <h1>Terça</h1>
-                <article id="tercaTarefa">
-
+                <article id="terca">
                 </article>
             </div>
-            <div id="quarta">
+            <div class="dia-semana">
                 <h1>Quarta</h1>
-                <article id="quartaTarefa">
-
+                <article id="quarta">
                 </article>
             </div>
-            <div id="quinta">
+            <div class="dia-semana">
                 <h1>Quinta</h1>
-                <article id="quintaTarefa">
-
+                <article id="quinta">
                 </article>
             </div>
-            <div id="sexta">
+            <div class="dia-semana">
                 <h1>Sexta</h1>
-                <article id="sextaTarefa">
-
+                <article id="sexta">
                 </article>
             </div>
-            <div id="sabado">
-                <h1>Sabado</h1>
-                <article id="sabadoTarefa">
-
+            <div class="dia-semana">
+                <h1>Sábado</h1>
+                <article id="sabado">
                 </article>
             </div>
-            <div id="domingo">
+            <div class="dia-semana">
                 <h1>Domingo</h1>
-                <article id="domingoTarefa">
-
+                <article id="domingo">
                 </article>
             </div>
         </div>
+        <footer>
+            <button id="limpar" onclick="limpar()">Limpar</button>
+        </footer>
     </div>
+
 </body>
 
 </html>
