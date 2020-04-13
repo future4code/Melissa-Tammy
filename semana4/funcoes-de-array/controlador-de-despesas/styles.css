@@ -11,6 +11,7 @@ section{
     padding-right: 3vw;
     border-radius: 5vw;
     background-color: rgba(255, 199, 79, 0.493);
+    height: 100%;
 }
 button{
     margin-top: 2vw;
@@ -21,13 +22,13 @@ button{
     background-color: rgba(61, 255, 223, 0.336);
     outline: none;
 }
-#section-despesas, #section-extrato{
+#section-cadastro, #section-despesas, #section-extrato{
     margin-top: 2vw;
 }
 label{
     margin-top: 1vw;
 }
 .container{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
