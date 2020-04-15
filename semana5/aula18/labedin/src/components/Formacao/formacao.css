@@ -1,7 +1,8 @@
 .formacao-container{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-self: flex-start;
     border: 1px solid black;
     padding: 20px 10px;
     margin-bottom: 10px;
@@ -10,10 +11,13 @@
 .formacao-container img{
     width: 70px;
     margin-right: 10px;
+    border-radius: 10px;
 }
 .formacao-container > div {
-    margin: 10px;
     display: flex;
-    justify-items: flex-start;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 200px;
+    margin: 10px;
 }
