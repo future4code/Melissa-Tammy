@@ -2,26 +2,50 @@ import React from 'react'
 import './Post.css'
 
 import { IconeComContador } from '../IconeComContador/IconeComContador'
+import { IconeSemContador } from '../IconeSemContador/IconeSemContador'
+
 
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
+import iconeMarkBranco from '../../img/mark-white.svg'
+import iconeMarkPreto from '../../img/mark-black.svg'
 import iconeComentario from '../../img/comment_icon.svg'
+import iconeShare from '../../img/share.svg'
+import iconeFace from '../../img/facebook.svg'
+
+
 import { SecaoComentario } from '../SecaoComentario/SecaoComentario'
+import { SecaoCompartilhado } from '../SecaoCompartilhado/SecaoCompartilhado'
+
 
 class Post extends React.Component {
   state = {
+    marcado: false,
     curtido: false,
     numeroCurtidas: 0,
     comentando: false,
+    compartilhando: false,
     numeroComentarios: 0
   }
 
-  onClickCurtida = () => {
-    if (this.state.curtido === false){
+  onClickMark = () => {
+    if (this.state.marcado === false) {
       this.setState({
-      numeroCurtidas: this.state.numeroCurtidas + 1,
-      curtido: !this.state.curtido
-    })
+        marcado: !this.state.marcado
+      })
+    } else {
+      this.setState({
+        marcado: !this.state.marcado
+      })
+    }
+  }
+
+  onClickCurtida = () => {
+    if (this.state.curtido === false) {
+      this.setState({
+        numeroCurtidas: this.state.numeroCurtidas + 1,
+        curtido: !this.state.curtido
+      })
     } else {
       this.setState({
         numeroCurtidas: this.state.numeroCurtidas - 1,
@@ -36,15 +60,23 @@ class Post extends React.Component {
     })
   }
 
+  onClickShare = () => {
+    this.setState({
+      compartilhando: !this.state.compartilhando
+    })
+  }
+
   aoEnviarComentario = () => {
     this.setState({
       comentando: false,
-      numeroComentarios: this.state.numeroComentarios + 1
+      numeroComentarios: this.state.numeroComentarios + 1,
+
     })
   }
 
   render() {
     let iconeCurtida
+    let iconeMark
 
     if (this.state.curtido) {
       iconeCurtida = iconeCoracaoPreto
@@ -53,10 +85,23 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoBranco
     }
 
+    if (this.state.marcado) {
+      iconeMark = iconeMarkPreto
+
+    } else {
+      iconeMark = iconeMarkBranco
+    }
+
     let componenteComentario
 
     if (this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario} />
+    }
+
+    let componenteCompartilhado
+
+    if (this.state.compartilhando) {
+      componenteCompartilhado = <SecaoCompartilhado />
     }
 
     return <div className={'post-container'}>
@@ -74,6 +119,16 @@ class Post extends React.Component {
           valorContador={this.state.numeroCurtidas}
         />
 
+        <IconeSemContador
+          icone={iconeMark}
+          onClickIcone={this.onClickMark}
+        />
+
+        <IconeSemContador
+          icone={iconeShare}
+          onClickIcone={this.onClickShare}
+        />
+
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={this.onClickComentario}
@@ -81,6 +136,8 @@ class Post extends React.Component {
         />
       </div>
       {componenteComentario}
+      {componenteCompartilhado}
+
     </div>
   }
 }
