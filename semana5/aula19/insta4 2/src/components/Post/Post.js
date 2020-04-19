@@ -17,6 +17,11 @@ import iconeFace from '../../img/facebook.svg'
 import { SecaoComentario } from '../SecaoComentario/SecaoComentario'
 import { SecaoCompartilhado } from '../SecaoCompartilhado/SecaoCompartilhado'
 
+import styled from 'styled-components'
+
+const PostFoto = styled.div`
+width: 100%;
+`
 
 class Post extends React.Component {
   state = {
@@ -70,7 +75,6 @@ class Post extends React.Component {
     this.setState({
       comentando: false,
       numeroComentarios: this.state.numeroComentarios + 1,
-
     })
   }
 
@@ -109,9 +113,9 @@ class Post extends React.Component {
         <img className={'user-photo'} src={this.props.fotoUsuario} alt={'Imagem do usuario'} />
         <p>{this.props.nomeUsuario}</p>
       </div>
-
-      <img className={'post-photo'} src={this.props.fotoPost} alt={'Imagem do post'} />
-
+      <PostFoto>
+        <img src={this.props.fotoPost} alt={'Imagem do post'} />
+      </PostFoto>
       <div className={'post-footer'}>
         <IconeComContador
           icone={iconeCurtida}
