@@ -1,0 +1,23 @@
+.formacao-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-self: flex-start;
+    border: 1px solid black;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    height: 200px;
+}
+.formacao-container img{
+    width: 70px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.formacao-container > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 200px;
+    margin: 10px;
+}
