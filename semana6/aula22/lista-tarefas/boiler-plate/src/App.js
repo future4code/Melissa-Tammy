@@ -26,7 +26,7 @@ class App extends React.Component {
       completa: false
     },
     {
-      id: Date.now(),
+      id: Date.now()+1,
       texto: 'Texto da tarefa2',
       completa: true
     }],
@@ -50,15 +50,36 @@ class App extends React.Component {
 
 
   criaTarefa = () => {
-
+    const novaTarefa = {
+      id: Date.now(),
+      texto: this.state.inputValue,
+      completa: false
+    }
+    const novaArrayTarefas = [novaTarefa, ...this.state.tarefas];
+    this.setState({
+      tarefas: novaArrayTarefas
+    })
   }
 
   selectTarefa = (id) => {
-
+    const novaArrayTarefa   = this.state.tarefas.map((tarefa)=>{
+      if(tarefa.id == id){
+        const novaTarefa = {
+          ... tarefa,
+          completa: !tarefa.completa
+        }
+        return novaTarefa
+      } else {
+        return tarefa
+      }
+    })
+    this.setState({tarefas: novaArrayTarefa})
   }
 
   onChangeFilter = (event) => {
-
+    this.setState({
+      filter: event.target.value
+    })
   }
 
   render() {
