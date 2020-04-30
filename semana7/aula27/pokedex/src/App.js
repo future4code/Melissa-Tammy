@@ -47,7 +47,6 @@ const BotaoBokebola = styled.button`
   background-color: rgba(255, 255, 255);
   transition: filter 0.2s;
 `
-
 class App extends React.Component {
   state = {
     listaNomes: [],
