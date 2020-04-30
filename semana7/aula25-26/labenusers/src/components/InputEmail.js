@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const EmailContainer = styled.div`
     background-color: white;
     margin:0;
+    margin-bottom: 2vw;
     padding-bottom:1vw;
     width:100%;
     display: flex;

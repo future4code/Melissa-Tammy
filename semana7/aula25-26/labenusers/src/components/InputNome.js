@@ -11,12 +11,16 @@ const NomeContainer = styled.div`
     align-items: center;
 `
 
+const Input = styled.input`
+    background-color: ice;
+`
+
 class InputNome extends React.Component {
     render() {
         return (
             <NomeContainer>
                 <label>Nome: </label>
-                <input onChange={this.props.onChangeInputNome} value={this.props.valorInput} />
+                <Input onChange={this.props.onChangeInputNome} value={this.props.valorInput} />
             </NomeContainer>
         );
     }

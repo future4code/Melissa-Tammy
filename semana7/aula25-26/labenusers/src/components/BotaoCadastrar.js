@@ -9,9 +9,10 @@ const BotaoContainer = styled.button`
     border: 0px;
     border-bottom-left-radius: 2vw;
     border-bottom-right-radius: 2vw;
-    height: 3vw;
     padding-top:0.5vw;
     padding-bottom:0.5vw;
+    border-bottom: 1px black solid;
+
 `
 
 class BotaoCadastrar extends React.Component {
