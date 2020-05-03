@@ -50,7 +50,7 @@ const BotaoBokebola = styled.button`
 class App extends React.Component {
   state = {
     listaNomes: [],
-    listaPokemons:[],
+    listaPokemons: [],
     abrePokebola: false
   }
 
@@ -68,24 +68,31 @@ class App extends React.Component {
         this.setState({
           listaNomes: response.data.results
         })
-        console.log("depois set state Nome")
+        console.log(this.state.listaNomes)
         {
           this.state.listaNomes.map((poke) => {
             console.log("Entrou no map")
             axios
               .get(`https://pokeapi.co/api/v2/pokemon/${poke.name}`)
               .then((response) => {
-                
                 const auxPokemon = {
+                  id: response.data.id,
                   nome: response.data.name,
-                  foto: response.data.sprites.front_default
+                  tipo: response.data.types.map((poke) => {
+                    return (
+                      poke.type.name
+                    )
+                  }),
+                  foto: `https://pokeres.bastionbot.org/images/pokemon/${response.data.id}.png`
                 }
-                const arrayAux = [auxPokemon, ...this.state.listaPokemons];
+                let arrayAux = [auxPokemon, ...this.state.listaPokemons];
+                arrayAux = arrayAux.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
                 this.setState({
                   listaPokemons: arrayAux
                 })
-                console.log(`Deu certo o get, o nome é ${response.data.name} e a url é ${response.data.sprites.front_default}`)
                 console.log(this.state.listaPokemons)
+
+                console.log(`Deu certo o get, tipo é ${response.data.types}`)
               }).catch((error) => {
                 console.log(error.response)
               })

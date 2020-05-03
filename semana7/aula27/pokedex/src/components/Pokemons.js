@@ -18,6 +18,7 @@ const CardPokemon = styled.div`
     margin: 1vw;
     justify-content: center;
     align-items: center;
+    padding:1vw;
 `
 
 const ContainerPokemon = styled.div`
@@ -27,24 +28,46 @@ const ContainerPokemon = styled.div`
 `
 
 const Nome = styled.h1`
-    font-size:1em;
+    font-size:150%;
+    text-transform: capitalize;
+`
+
+const Foto = styled.img`
+    width:50%;
+`
+const Detalhes = styled.div`
+    display: flex;
+    flex-direction: column;
+    width:80%;
+    text-align:left;
+`
+const Tipo = styled.p`
+    margin:0;
 `
 
 class Pokemons extends React.Component {
     render() {
         const imprimePokemons = this.props.pegaListaPokemon.map((poke) => {
+
             return (
                 <CardPokemon>
+                    <Foto src={poke.foto} />
                     <Nome>{poke.nome}</Nome>
-                    <img src={poke.foto} />
+                    <Detalhes>
+                        <Tipo>{poke.tipo[0]}</Tipo>
+                        <Tipo>{poke.tipo[1]}</Tipo>
+                    </Detalhes>
+
                 </CardPokemon>
             )
         })
-
+        let listaOrdenada = imprimePokemons
+        listaOrdenada = listaOrdenada.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
+        console.log(listaOrdenada)
         return (
             <Container>
                 <ContainerPokemon>
-                    {imprimePokemons}
+                    {listaOrdenada}
                 </ContainerPokemon>
             </Container >
 
