@@ -1,0 +1,31 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+h1{
+  font-family: 'Righteous', cursive;
+}
+
+.botoes button{
+  width:20vw;
+  height: 20vw;
+  border-radius: 100%;
+  background-color: white;
+  border:none;
+}
+
+.botoes button:focus{
+  outline:none;
+  animation: spin 10s linear infinite;
+
+}
+
+@media (min-width: 500px) {
+  .botoes{
+    background-color: black;
+  }
+
+}
