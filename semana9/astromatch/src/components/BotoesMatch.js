@@ -19,10 +19,12 @@ const BotoesContainer = styled.div`
 
 const Yep = styled.button`
     color:green;
+
 `
 
 const Nope = styled.button`
 color:red;
+
 `
 
 
@@ -63,13 +65,13 @@ const BotoesMatch = (props) => {
 
     return (
         <BotoesContainer className="botoes">
-            <Nope
+            <Nope className="botaoNope"
             onClick={onClickNeg}>
                 <CloseIcon
                     fontSize="large"
                 />
             </Nope>
-            <Yep
+            <Yep className="botaoYep"
             onClick={onClickCoracao}>
                 <FavoriteIcon
                     fontSize="large"

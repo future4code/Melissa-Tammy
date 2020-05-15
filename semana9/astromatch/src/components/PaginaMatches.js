@@ -2,7 +2,17 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import styled from 'styled-components'
 
+import Header from './Header'
+
 const Container = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  height:100vh;
+  width:100vw;
+`
+
+const ContainerListaMastches = styled.div`
   position: relative;
   width: 100%;
   height:90%;
@@ -45,14 +55,20 @@ const PaginaMatches = (props) => {
     console.log(props.matches)
     return (
         <Container>
-            {props.matches.map((perfil) => {
-                return (
-                    <CardPessoa>
-                        <Foto src={perfil.photo}/>
-                    <Nome>{perfil.name}</Nome>
-                    </CardPessoa>
-                )
-            })}
+            <Header
+                pagina={props.mostraPagina}
+                botaoVoltar={props.ativaVoltar}
+            />
+            <ContainerListaMastches>
+                {props.matches.map((perfil) => {
+                    return (
+                        <CardPessoa>
+                            <Foto src={perfil.photo} />
+                            <Nome>{perfil.name}</Nome>
+                        </CardPessoa>
+                    )
+                })}
+            </ContainerListaMastches>
         </Container>
     );
 }

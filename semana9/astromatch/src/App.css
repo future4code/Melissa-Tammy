@@ -15,12 +15,25 @@ h1{
   border-radius: 100%;
   background-color: white;
   border:none;
+  transition:0.5s
 }
 
 .botoes button:focus{
   outline:none;
-  animation: spin 10s linear infinite;
+}
 
+.botaoNope :active{
+  color:white;
+  background-color:red;
+}
+
+.botaoYep:active{
+  color:white;
+  background-color:green;
+}
+
+.white{
+  color:white;
 }
 
 @media (min-width: 500px) {
