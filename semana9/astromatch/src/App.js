@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import styled from 'styled-components'
 
-import CardPessoa from './components/CardPessoa'
+import Loading from './components/Loading'
 import PaginaMatches from './components/PaginaMatches';
 import PaginaPerfis from './components/PaginaPerfis'
 import PaginaConfiguracoes from './components/PaginaConfiguracoes'
@@ -39,9 +39,12 @@ const App = (props) => {
   const [listaDeMatches, setListaDeMatches] = useState([])
   const [statusProximoPerfil, setStatusProximoPerfil] = useState(false)
   const [statusMostraPagina, setStatusMostraMatchs] = useState('exibePaginaPerfis')
+  const [mostraLoading, setMostraLoading] = useState(true)
 
   const FunctionProximoPerfil = () => {
     setStatusProximoPerfil(!statusProximoPerfil)
+
+
   }
 
   const onClickBotaoMatches = () => {
@@ -60,8 +63,15 @@ const App = (props) => {
     axios
       .get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/melissa-melonio-julian/person')
       .then(response => {
-        setPerfilExibido(response.data.profile)
-        console.log(perfilExibido)
+        if (response !== null) {
+          setMostraLoading(true)
+          setPerfilExibido(response.data.profile)
+          console.log('entrou no if')
+          setMostraLoading(false)
+        } else {
+          setMostraLoading(true)
+        }
+
       })
       .catch(error => {
         console.log(error)
@@ -100,9 +110,9 @@ const App = (props) => {
       break;
     case 'exibePaginaConfiguracoes':
       paginaExibida =
-        <PaginaConfiguracoes 
-        mostraPagina={statusMostraPagina}
-        ativaVoltar={onClickBotaoVoltar}
+        <PaginaConfiguracoes
+          mostraPagina={statusMostraPagina}
+          ativaVoltar={onClickBotaoVoltar}
         />
       break;
 
@@ -113,7 +123,12 @@ const App = (props) => {
 
   return (
     <AppContainer>
-      {paginaExibida}
+      {mostraLoading ? (
+        <Loading />
+      ) : (
+          <div>{paginaExibida}</div>
+        )}
+
     </AppContainer>
   );
 }

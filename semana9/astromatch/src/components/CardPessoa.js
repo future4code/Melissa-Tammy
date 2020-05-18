@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import styled from 'styled-components'
 
+
+
 const Container = styled.div`
   position: relative;
   width: 90%;
@@ -11,9 +13,14 @@ const Container = styled.div`
   border: 1px black solid;
   border-radius: 3px;
   overflow: hidden;
-  transition: all 0.5s ease 0s;
-  animation: 0.5s ease 0s 1 normal forwards running none;
+  transition: all 5s ease 0s;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;  
 `
+
+
 
 const Content = styled.div`
   z-index: 1;
@@ -54,8 +61,14 @@ const Footer = styled.div`
 `
 
 const CardPessoa = (props) => {
-  console.log(props.perfil)
+const [muda, setMuda] = useState(false)  
 
+  const ativandoEfeito=() => {
+    setMuda(props.stateEfeito)
+    console.log("looping")
+  }
+
+  console.log(props.perfil)
   const dadosPerfil = props.perfil
   console.log(dadosPerfil)
   return (
@@ -70,7 +83,7 @@ const CardPessoa = (props) => {
           <p>{dadosPerfil.bio}</p>
         </Footer>
       </Content>
-
+    
 
     </Container>
   );

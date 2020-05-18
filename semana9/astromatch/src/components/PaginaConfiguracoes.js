@@ -26,6 +26,7 @@ const PaginaConfiguracoes = (props) => {
             .put('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/melissa-melonio-julian/clear')
             .then(response => {
                 console.log(response)
+                window.location.reload(false)
             })
             .catch(error => {
                 console.log(error)

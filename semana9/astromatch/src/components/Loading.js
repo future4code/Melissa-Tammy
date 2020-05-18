@@ -29,22 +29,19 @@ const Main = styled.div`
 
 `
 
-const PaginaPerfis = (props) => {
+const Loading = (props) => {
 
 
     return (
         <Container>
-            <Header 
-            pagina={props.mostraPagina}
-            mostraMatchs={props.botaoMatches}
-            mostraConfig={props.botaoConfig}/>
+            <Header
+                pagina={props.mostraPagina}
+                mostraMatchs={props.botaoMatches}
+                mostraConfig={props.botaoConfig} />
             <Main>
-                <CardPessoa efeito={props.stateEfeito} perfil={props.PegaPerfilExibido} />
-                <BotoesMatch
-                    perfil={props.PegaPerfilExibido}
-                    proximo={props.proximoPerfil} />
+                <h1>CARREGANDO...</h1>
             </Main>
         </Container>
     )
 }
-export default PaginaPerfis;
+export default Loading;

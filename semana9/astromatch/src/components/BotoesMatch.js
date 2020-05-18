@@ -65,17 +65,11 @@ const BotoesMatch = (props) => {
 
     return (
         <BotoesContainer className="botoes">
-            <Nope className="botaoNope"
-            onClick={onClickNeg}>
-                <CloseIcon
-                    fontSize="large"
-                />
+            <Nope className="botaoNope" onClick={onClickNeg}>
+                <CloseIcon fontSize="large"/>
             </Nope>
-            <Yep className="botaoYep"
-            onClick={onClickCoracao}>
-                <FavoriteIcon
-                    fontSize="large"
-                />
+            <Yep className="botaoYep" onClick={onClickCoracao}>
+                <FavoriteIcon fontSize="large"/>
             </Yep>
         </BotoesContainer>
     );

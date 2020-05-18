@@ -15,14 +15,14 @@ h1{
   border-radius: 100%;
   background-color: white;
   border:none;
-  transition:0.5s
+  transition:0.3s
 }
 
 .botoes button:focus{
   outline:none;
 }
 
-.botaoNope :active{
+.botaoNope:active{
   color:white;
   background-color:red;
 }
@@ -35,6 +35,20 @@ h1{
 .white{
   color:white;
 }
+
+@keyframes example {
+20%{
+  transform: rotate(0deg);
+  left:0vw;
+  opacity: 100%;
+}
+80%{
+  transform: rotate(5deg);
+  left:99vw;
+  opacity: 10%;
+}
+}
+
 
 @media (min-width: 500px) {
   .botoes{
