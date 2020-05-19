@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Login = (props) => {
     return (
       <div>
-  
+        <h1>login</h1>
       </div>
     );
   }

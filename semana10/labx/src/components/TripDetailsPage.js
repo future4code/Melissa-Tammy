@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const TripDetailsPage = (props) => {
     return (
       <div>
-  
+        <h1>trip details public</h1>
       </div>
     );
   }
