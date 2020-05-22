@@ -4,31 +4,49 @@ import styled from 'styled-components'
 import { useHistory } from "react-router-dom";
 import HeaderPublic from './HeaderPublic';
 
-const Banner = styled.img`
-  width:100vw;
-  height:70vh;
-  filter: brightness(0.5);
-  transition:1s;
-  :hover{
-    filter: brightness(1)
-  }
-`
 const HomePageContainer = styled.div`
+  width:100vw;
   display:flex;
   flex-direction:column;
+  justify-content:center;
   align-items:center;
 `
 
 const TextImg = styled.h1`
-  width:50%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://4.bp.blogspot.com/-EFQEXmmdBXo/XKG5Noll6xI/AAAAAAAABGw/2epUYa2fuEUzCK0Q9J4ncAr88cG5Q2XSQCKgBGAs/w3840-h1080-p-k-no-nu/space-astronaut-sci-fi-uhdpaper.com-4K-111.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100vw;
+  height:70vh;
+  padding-left:5vw;
+  padding-right:5vw;
   text-align: center;
   font-size: 7vw;
   font-weight: bold;
   text-transform: uppercase;
-  position: absolute;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   font-family: 'Montserrat';
-  top: 15vw;
   color: white;
+`
+const BotaoMostrarMais = styled.button`
+  border: 2px black solid;
+  width:40%;
+  min-height:60px;
+  padding:1vw;
+  margin-top: 4vh;
+  text-align: center;
+  font-size: 1.5vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition:0.7s;
+  :hover{
+    border: 2px #009085 solid;
+    color:#009085;
+    background-color: #0000003b;
+  }
 `
 
 const HomePage = (props) => {
@@ -36,15 +54,14 @@ const HomePage = (props) => {
 
   const goToListTripPage = () =>{
     history.push("/trips/listTripsPage");
-
   }
+
 
     return (
       <HomePageContainer>
         <HeaderPublic></HeaderPublic>
-        <Banner src='https://4.bp.blogspot.com/-EFQEXmmdBXo/XKG5Noll6xI/AAAAAAAABGw/2epUYa2fuEUzCK0Q9J4ncAr88cG5Q2XSQCKgBGAs/w3840-h1080-p-k-no-nu/space-astronaut-sci-fi-uhdpaper.com-4K-111.jpg'></Banner>
-        <TextImg>to infinity and beyond</TextImg>
-        <h1 onClick={goToListTripPage}>Que viagem você procura?</h1>
+        <TextImg>to infinity and beyond</TextImg> 
+        <BotaoMostrarMais onClick={goToListTripPage}>confira nossas viagens</BotaoMostrarMais>
       </HomePageContainer>
     );
   }

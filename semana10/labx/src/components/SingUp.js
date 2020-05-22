@@ -80,7 +80,7 @@ const Login = (props) => {
     }
     axios
       .post(
-        'https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/login',
+        'https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/signup',
         body,
         {
           headers: {
@@ -100,7 +100,7 @@ const Login = (props) => {
     <LoginPageConatiner>
       <HeaderPublic></HeaderPublic>
       <ContainerForm>
-        <h1>Login</h1>
+        <h1>Sing Up</h1>
         <InputContainer>
           <LabelLogin>e-mail</LabelLogin>
           <InputLogin placeholder={"email"} value={email} onChange={onChangeEmail}></InputLogin>

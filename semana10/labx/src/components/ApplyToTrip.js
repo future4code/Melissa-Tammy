@@ -87,7 +87,7 @@ const BotaoEntrar = styled.button`
 `
 
 
-const CreateTripPage = (props) => {
+const ApplyToTrip = (props) => {
 
     const history = useHistory();
     const [nome, onChangeNome] = useInputValue()
@@ -127,7 +127,7 @@ const CreateTripPage = (props) => {
             <Fundo />
             <MainContainer>
                 <ContainerForm>
-                    <Titulo>CRIAR VIAGEM</Titulo>
+                    <Titulo>INSCRIÇÃO</Titulo>
                     <InputContainer>
                         <LabelLogin>Nome</LabelLogin>
                         <InputLogin placeholder={"Nome"} value={nome} onChange={onChangeNome}></InputLogin>
@@ -158,4 +158,4 @@ const CreateTripPage = (props) => {
         </ApplyToTripPageContainer>
     );
 }
-export default CreateTripPage;
+export default ApplyToTrip;
