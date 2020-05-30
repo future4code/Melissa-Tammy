@@ -2,43 +2,23 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import styled from 'styled-components'
 import HeaderPublic from './HeaderPublic';
-import './BlackBody.css'
 import { useHistory } from "react-router-dom";
-import { useInputValue } from './hooks/useInputValue'
+import { useForm } from './hooks/useForm'
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
 
 
 const ApplyToTripPageContainer = styled.div`
-  width:100vw;
+  width:100%;
+  height: 100vh;
   display:flex;
   flex-direction:column;
-
-`
-const MainContainer = styled.div`
-  display:flex;
-  padding:2vw;
-  justify-content: center;
-`
-
-const Fundo = styled.div`
-  border:3px black solid;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://4.bp.blogspot.com/-EFQEXmmdBXo/XKG5Noll6xI/AAAAAAAABGw/2epUYa2fuEUzCK0Q9J4ncAr88cG5Q2XSQCKgBGAs/w3840-h1600-p-k-no-nu/space-astronaut-sci-fi-uhdpaper.com-4K-111.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position:absolute;
-  filter:blur(2px);  
-  height:100vh;
-  width:100vw;
-  z-index:-1;
-`
-
-const Titulo = styled.h1`
-    margin-bottom: 5%;
+  align-items:center;
 `
 
 const ContainerForm = styled.div`
   width:50%;
-  height: 60%;
+  height: 80%;
   border-radius:10px;
   background-color:white;
   display:flex;
@@ -48,18 +28,27 @@ const ContainerForm = styled.div`
   padding:1vw;
   padding-top:2vw;
   padding-bottom:3vw;
-
+  margin-top:2vw;
 `
+
+const Titulo = styled.h1`
+    margin-bottom: 5%;
+`
+
 
 const InputContainer = styled.div`
   width:80%;
+  height: 60%;
   display:flex;
   flex-direction:column;
 `
 
-const InputLogin = styled.input`
+const InputApply = styled(TextField)`
   width:100%;
-  display:block;
+  height: 100%;
+  display:flex;
+  justify-content:space-between;
+
 `
 
 const LabelLogin = styled.label`
@@ -70,7 +59,7 @@ const LabelLogin = styled.label`
 const BotaoEntrar = styled.button`
   width:80%;
   color: white;
-  min-height:20px;
+  min-height:30px;
   min-width:95px;
   padding:0.5%;
   background-color:#009085;
@@ -89,73 +78,84 @@ const BotaoEntrar = styled.button`
 
 const ApplyToTrip = (props) => {
 
-    const history = useHistory();
-    const [nome, onChangeNome] = useInputValue()
-    const [idade, onChangeIdade] = useInputValue()
-    const [profissao, onChangeProfissao] = useInputValue()
-    const [pais, onChangePais] = useInputValue() 
-    const [textoAplicacao, onChangeTextoAplicacao] = useInputValue()
-    const onClickEntrar = () => {
-      const body = {
-        name: nome,
-        age: idade,
-        applicationText: textoAplicacao,
-        profession: profissao,
-        country: pais
+  const history = useHistory();
+  const { form, onChange } = useForm({ nome: "", idade: "", textoAplicacao: "", profissao: "", pais: "" });
+
+  const handleInputChange = event => {
+    const { name, value } = event.target;
+    onChange(name, value);
+  };
+
+  const paises = [
+    {
+      value: 'Brasil',
+      label: 'brasil',
+    },
+    {
+      value: 'Cuba',
+      label: 'cuba',
+    },
+    {
+      value: 'Canada',
+      label: 'canada',
+    },
+    {
+      value: 'Japão',
+      label: 'japao',
+    },
+  ];
+
+  const onClickEntrar = () => {
+    const body = {
+      name: form.nome,
+      age: form.idade,
+      applicationText: form.textoAplicacao,
+      profession: form.profissao,
+      country: form.pais
     }
-      axios
-        .post(
-          `https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/trip/${props.id}`,
-          body,
-          {
-            headers: {
-              'Content-Type': 'application/json'
-            }
+    axios
+      .post(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/trip/${props.id}`,
+        body,
+        {
+          headers: {
+            'Content-Type': 'application/json'
           }
-        )
-        .then((response) => {
-          console.log(response)
-        })
-        .catch((error) =>{
-          console.log(error)
-        })
-    }
+        }
+      )
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
 
-    return (
-        <ApplyToTripPageContainer>
-            <HeaderPublic></HeaderPublic>
-            <Fundo />
-            <MainContainer>
-                <ContainerForm>
-                    <Titulo>INSCRIÇÃO</Titulo>
-                    <InputContainer>
-                        <LabelLogin>Nome</LabelLogin>
-                        <InputLogin placeholder={"Nome"} value={nome} onChange={onChangeNome}></InputLogin>
-                    </InputContainer>
-                    <InputContainer>
-                        <LabelLogin >Idade</LabelLogin>
-                        <InputLogin placeholder={"Idade"} value={idade} onChange={onChangeIdade} type={"number"}></InputLogin>
-                    </InputContainer>
-                    <InputContainer>
-                        <LabelLogin >Texto para aplicação</LabelLogin>
-                        <textarea placeholder={"texto"} value={textoAplicacao} onChange={onChangeTextoAplicacao} type={"text"}></textarea>
-                    </InputContainer>
-                    <InputContainer>
-                        <LabelLogin >Profissão</LabelLogin>
-                        <InputLogin placeholder={"Profissão"} value={profissao} onChange={onChangeProfissao} type={"text"}></InputLogin>
-                    </InputContainer>
-                    <InputContainer>
-                        <LabelLogin >País</LabelLogin>
-                        <select onChange={onChangePais}>
-                            <option value='Brasil'>Brasil</option>
-                        </select>
-                    </InputContainer>
-                    <BotaoEntrar onClick={onClickEntrar}>Entrar</BotaoEntrar>
-                </ContainerForm>
-
-
-            </MainContainer>
-        </ApplyToTripPageContainer>
-    );
+  return (
+    <ApplyToTripPageContainer>
+      <HeaderPublic></HeaderPublic>
+        <ContainerForm>
+          <Titulo>INSCRIÇÃO</Titulo>
+          <InputContainer>
+            <InputApply placeholder={"Nome"} value={form.nome} onChange={handleInputChange}></InputApply>
+            <InputApply placeholder={"Idade"} value={form.idade} onChange={handleInputChange} type={"number"}></InputApply>
+            <InputApply placeholder={"texto"} value={form.textoAplicacao} onChange={handleInputChange} type={"text"}></InputApply>
+            <InputApply placeholder={"Profissão"} value={form.profissao} onChange={handleInputChange} type={"text"}></InputApply>
+            <TextField
+              select
+              label="Pais"
+              onChange={handleInputChange}
+              helperText="Please select your currency">
+              {paises.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+          </InputContainer>
+          <BotaoEntrar onClick={onClickEntrar}>Inscrever-se</BotaoEntrar>
+        </ContainerForm>
+    </ApplyToTripPageContainer>
+  );
 }
 export default ApplyToTrip;

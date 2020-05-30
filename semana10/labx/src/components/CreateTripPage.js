@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import styled from 'styled-components'
-import HeaderPublic from './HeaderPublic';
-import './BlackBody.css'
+import HeaderPrivate from './HeaderPrivate';
 import { useHistory } from "react-router-dom";
-import { useInputValue } from './hooks/useInputValue'
+import { useForm } from './hooks/useForm'
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
 
 
 const ApplyToTripPageContainer = styled.div`
@@ -57,7 +58,7 @@ const InputContainer = styled.div`
   flex-direction:column;
 `
 
-const InputLogin = styled.input`
+const InputForm = styled(TextField)`
   width:100%;
   display:block;
 `
@@ -88,74 +89,94 @@ const BotaoEntrar = styled.button`
 
 
 const CreateTripPage = (props) => {
+  const history = useHistory();
+  const { form, onChange } = useForm({ nome: "", planeta: "", data: "", descricao: "", duracaoEmDias: "" });
 
-    const history = useHistory();
-    const [nome, onChangeNome] = useInputValue()
-    const [idade, onChangeIdade] = useInputValue()
-    const [profissao, onChangeProfissao] = useInputValue()
-    const [pais, onChangePais] = useInputValue() 
-    const [textoAplicacao, onChangeTextoAplicacao] = useInputValue()
-    const onClickEntrar = () => {
-      const body = {
-        name: nome,
-        age: idade,
-        applicationText: textoAplicacao,
-        profession: profissao,
-        country: pais
+  const handleInputChange = event => {
+    const { name, value } = event.target;
+    onChange(name, value);
+  };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token === null) {
+      history.push("/login");
     }
-      axios
-        .post(
-          `https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/trip/${props.id}`,
-          body,
-          {
-            headers: {
-              'Content-Type': 'application/json'
-            }
+  }, [history]);
+
+  const onClickCriar = () => {
+    const body = {
+      name: form.nome,
+      planet: form.planeta,
+      date: form.data,
+      description: form.descricao,
+      durationInDays: form.duracaoEmDias
+    }
+    axios
+      .post(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/trips`,
+        body,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'auth': `${localStorage.getItem("token")}`
           }
-        )
-        .then((response) => {
-          console.log(response)
-        })
-        .catch((error) =>{
-          console.log(error)
-        })
-    }
+        }
+      )
+      .then((response) => {
+        alert("Viagem cadastrada!")
+        history.push("/private/details");
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
 
-    return (
-        <ApplyToTripPageContainer>
-            <HeaderPublic></HeaderPublic>
-            <Fundo />
-            <MainContainer>
-                <ContainerForm>
-                    <Titulo>CRIAR VIAGEM</Titulo>
-                    <InputContainer>
-                        <LabelLogin>Nome</LabelLogin>
-                        <InputLogin placeholder={"Nome"} value={nome} onChange={onChangeNome}></InputLogin>
-                    </InputContainer>
-                    <InputContainer>
-                        <LabelLogin >Idade</LabelLogin>
-                        <InputLogin placeholder={"Idade"} value={idade} onChange={onChangeIdade} type={"number"}></InputLogin>
-                    </InputContainer>
-                    <InputContainer>
-                        <LabelLogin >Texto para aplicação</LabelLogin>
-                        <textarea placeholder={"texto"} value={textoAplicacao} onChange={onChangeTextoAplicacao} type={"text"}></textarea>
-                    </InputContainer>
-                    <InputContainer>
-                        <LabelLogin >Profissão</LabelLogin>
-                        <InputLogin placeholder={"Profissão"} value={profissao} onChange={onChangeProfissao} type={"text"}></InputLogin>
-                    </InputContainer>
-                    <InputContainer>
-                        <LabelLogin >País</LabelLogin>
-                        <select onChange={onChangePais}>
-                            <option value='Brasil'>Brasil</option>
-                        </select>
-                    </InputContainer>
-                    <BotaoEntrar onClick={onClickEntrar}>Entrar</BotaoEntrar>
-                </ContainerForm>
+  return (
+    <ApplyToTripPageContainer>
+      <HeaderPrivate/>
+      <Fundo />
+      <MainContainer>
+        <ContainerForm>
+          <Titulo>CRIAR VIAGEM</Titulo>
+          <InputContainer>
+            <InputForm
+              label="nome"
+              name="nome"
+              value={form.nome}
+              onChange={handleInputChange} />
+            <InputForm
+              label="planeta"
+              name="planeta"
+              value={form.planeta}
+              onChange={handleInputChange}
+              type={"text"} />
+            <textarea
+              label="data"
+              name="data"
+              value={form.data}
+              onChange={handleInputChange}
+              type={"date"} />
+            <InputForm
+              label="descricao"
+              name="descricao"
+              value={form.descricao}
+              onChange={handleInputChange}
+              type={"text"} />
+            <InputForm
+              label="Duracao em Dias"
+              name="duracaoEmDias"
+              value={form.duracaoEmDias}
+              onChange={handleInputChange}
+              type={"number"} />
+          </InputContainer>
+          <BotaoEntrar onClick={onClickCriar}>Criar</BotaoEntrar>
+        </ContainerForm>
 
 
-            </MainContainer>
-        </ApplyToTripPageContainer>
-    );
+      </MainContainer>
+    </ApplyToTripPageContainer>
+  );
 }
 export default CreateTripPage;

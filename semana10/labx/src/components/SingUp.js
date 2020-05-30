@@ -2,16 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import styled from 'styled-components'
 import HeaderPublic from './HeaderPublic';
-import { useInputValue } from './hooks/useInputValue'
+import { useForm } from './hooks/useForm'
+import TextField from '@material-ui/core/TextField';
+import { useHistory } from "react-router-dom";
 
 
 const LoginPageConatiner = styled.div`
   width:100vw;
   height:100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://4.bp.blogspot.com/-EFQEXmmdBXo/XKG5Noll6xI/AAAAAAAABGw/2epUYa2fuEUzCK0Q9J4ncAr88cG5Q2XSQCKgBGAs/w3840-h1600-p-k-no-nu/space-astronaut-sci-fi-uhdpaper.com-4K-111.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 `
 
 const ContainerForm = styled.div`
@@ -34,22 +32,19 @@ const ContainerForm = styled.div`
 
 const InputContainer = styled.div`
   width:80%;
+  height: 40%;
   display:flex;
   flex-direction:column;
+  justify-content:space-between;
 `
 
-const InputLogin = styled.input`
+const InputLogin = styled(TextField)`
   width:100%;
   display:block;
 `
 
-const LabelLogin = styled.label`
-  font-size: 1em;
-
-`
-
 const BotaoEntrar = styled.button`
-  width:80%;
+  width:60%;
   color: white;
   min-height:20px;
   min-width:95px;
@@ -69,14 +64,17 @@ const BotaoEntrar = styled.button`
 
 
 const Login = (props) => {
-
-  const [email, onChangeEmail] = useInputValue()
-  const [senha, onChangeSenha] = useInputValue()
+  const history = useHistory();
+  const { form, onChange } = useForm({ emailInserido: "", senha: "" });
+  const handleInputChange = event => {
+    const { name, value } = event.target;
+    onChange(name, value);
+  };
 
   const onClickEntrar = () => {
     const body = {
-      email: email,
-      password: senha
+      email: form.emailInserido,
+      password: form.senha
     }
     axios
       .post(
@@ -102,14 +100,19 @@ const Login = (props) => {
       <ContainerForm>
         <h1>Sing Up</h1>
         <InputContainer>
-          <LabelLogin>e-mail</LabelLogin>
-          <InputLogin placeholder={"email"} value={email} onChange={onChangeEmail}></InputLogin>
+          <InputLogin 
+          label="e-mail" 
+          name="emailInserido"
+          value={form.emailInserido}
+          onChange={handleInputChange}/>
+          <InputLogin 
+          label="senha" 
+          name="senha"
+          value={form.senha}
+          onChange={handleInputChange}
+          type={"password"}/>
         </InputContainer>
-        <InputContainer>
-          <LabelLogin >senha</LabelLogin>
-          <InputLogin placeholder={"senha"} value={senha} onChange={onChangeSenha} type={"password"}></InputLogin>
-        </InputContainer>
-        <BotaoEntrar onClick={onClickEntrar}>Entrar</BotaoEntrar>
+        <BotaoEntrar onClick={onClickEntrar}>cadastrar</BotaoEntrar>
       </ContainerForm>
     </LoginPageConatiner>
   );

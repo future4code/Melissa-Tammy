@@ -67,8 +67,7 @@ const HeaderPublic = (props) => {
     <HeaderContainer>
       <img onClick={goToHomePage} src="https://img.icons8.com/cotton/64/000000/rocket-take-off.png" />
       <ContainerBotoes>
-        <BotaoLogin onClick={goToLoginPage}>Login</BotaoLogin>
-        <BotaoLogin onClick={goToSingUpPage}>Sing Up</BotaoLogin>
+
       </ContainerBotoes>
     </HeaderContainer>
   );

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import styled from 'styled-components'
 import HeaderPublic from './HeaderPublic';
-import './BlackBody.css'
 import { useHistory } from "react-router-dom";
 
 
 const ListTripsPageContainer = styled.div`
   width:100vw;
+  height: 100vh;
   display:flex;
   flex-direction:column;
 
@@ -19,23 +19,12 @@ const MainContainer = styled.div`
   padding:2vw;
 `
 
-const Fundo = styled.div`
-  border:3px black solid;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://4.bp.blogspot.com/-EFQEXmmdBXo/XKG5Noll6xI/AAAAAAAABGw/2epUYa2fuEUzCK0Q9J4ncAr88cG5Q2XSQCKgBGAs/w3840-h1600-p-k-no-nu/space-astronaut-sci-fi-uhdpaper.com-4K-111.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position:absolute;
-  filter:blur(2px);  
-  height:100vh;
-  width:100vw;
-  z-index:-1;
-`
-
 const Titulo = styled.h1`
   width:100%;
+  color:white;
   position: relative;
   z-index:1;
+  margin-bottom:1vw;
 `
 
 const CardViagem = styled.div`
@@ -83,20 +72,16 @@ const ListTripsPage = (props) => {
       .get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/trips')
       .then(response => {
         setListaViagens(response.data.trips)
-        console.log(response.data.trips)
-        console.log(listaViagens)
       })
       .catch(error => {
-        console.log(error)
+        alert(error)
       })
   }, [])
 
   return (
     <ListTripsPageContainer>
       <HeaderPublic></HeaderPublic>
-      <Fundo />
       <MainContainer>
-
         <Titulo>{listaViagens.length} VIAGENS FORAM ENCONTRADAS</Titulo>
         {listaViagens.map((viagem) => {
           return (

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import styled from 'styled-components'
 import { useHistory } from "react-router-dom";
-import HeaderPublic from './HeaderPublic';
+import HeaderPrivate from './HeaderPrivate';
 
 const HomePageContainer = styled.div`
   width:100vw;
@@ -44,20 +44,31 @@ const BotaoMostrarMais = styled.button`
   }
 `
 
-const HomePage = (props) => {
+const HomePagePrivate = (props) => {
   const history = useHistory();
-
-  const goToListTripPage = () =>{
-    history.push("/trips/listTripsPage");
+  const goToTripDetailsPage = () =>{
+    history.push("/private/details");
   }
+  const goToCreateTripPage = () =>{
+    history.push("/private/create");
+  }
+  const goToDecideCandidatePage = () =>{
+    history.push("/private/decide");
+  }
+  useEffect(() => {
+    const token = localStorage.getItem("token");
 
-
+    if (token === null) {
+      history.push("/");
+    }
+  }, [history]);
     return (
       <HomePageContainer>
-        <HeaderPublic></HeaderPublic>
-        <TextImg>to infinity and beyond</TextImg> 
-        <BotaoMostrarMais onClick={goToListTripPage}>confira nossas viagens</BotaoMostrarMais>
+        <HeaderPrivate></HeaderPrivate>
+        <BotaoMostrarMais onClick={goToTripDetailsPage}>Detalhes de viagens</BotaoMostrarMais>
+        <BotaoMostrarMais onClick={goToCreateTripPage}>Criar viagens</BotaoMostrarMais>
+        <BotaoMostrarMais onClick={goToDecideCandidatePage}>Decidir Candidatos</BotaoMostrarMais>
       </HomePageContainer>
     );
   }
-  export default HomePage;
+  export default HomePagePrivate;
