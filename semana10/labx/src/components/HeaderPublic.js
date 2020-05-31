@@ -41,7 +41,6 @@ const BotaoLogin = styled.button`
    }
 `
 const ContainerBotoes = styled.div`
-  width:20%;
   height:100%;
   display:flex;
   justify-content:space-between;
@@ -62,13 +61,9 @@ const HeaderPublic = (props) => {
   const goToHomePage = () => {
     history.push("/");
   }
-  const goToCreateTripPage = () => {
-    history.push("/trips/create");
-  }
   return (
     <HeaderContainer>
       <img onClick={goToHomePage} src="https://img.icons8.com/cotton/64/000000/rocket-take-off.png" />
-      <BotaoLogin onClick={goToCreateTripPage}>Private</BotaoLogin>
       <ContainerBotoes>
         <BotaoLogin onClick={goToLoginPage}>Login</BotaoLogin>
         <BotaoLogin onClick={goToSingUpPage}>Sing Up</BotaoLogin>

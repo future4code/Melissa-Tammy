@@ -14,7 +14,7 @@ const ListTripsPageContainer = styled.div`
 `
 const MainContainer = styled.div`
   display:flex;
-  justify-content:space-between;
+  justify-content:end;
   flex-wrap:wrap;
   padding:2vw;
 `
@@ -29,6 +29,7 @@ const Titulo = styled.h1`
 
 const CardViagem = styled.div`
   width:24%;
+  margin: 4px;
   border: 1px black solid;
   background-color:white;
 `

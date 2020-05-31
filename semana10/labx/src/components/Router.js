@@ -38,7 +38,7 @@ const Router = (props) => {
         <Route exact path="/private/create">
           <CreateTripPage />
         </Route>
-        <Route exact path="/private/decide">
+        <Route exact path="/private/candidate/:id">
           <DecideCandidatePage/>
         </Route>
       </Switch>

@@ -38,6 +38,7 @@ const CardViagem = styled.div`
   align-items:center;
   border: 1px black solid;
   background-color:white;
+  box-shadow: inset -2px 0 20px 0px #00000054;
 `
 
 const ContainerTripInfo = styled.div`
@@ -47,26 +48,19 @@ const ContainerTripInfo = styled.div`
   flex-wrap: wrap;
 `
 
-const Nome = styled.h3`
-  margin-left:5%;
-  margin-right:5%;
-`
-
-const Local = styled.p`
- margin-left:5%;
- margin-right:5%;
-`
-const Data = styled.p`
- margin-left:5%;
- margin-right:5%;
-`
-const Duracao = styled.p`
- margin-left:5%;
- margin-right:5%;
+const ContainerTripInfoModal = styled.div`
+  display:flex;
+  width:100%;
+  flex-direction:column;
+  flex-wrap: wrap;
 `
 
 const ImgPlanet = styled.img`
   height: 15vh;
+`
+
+const ImgPlanetModal = styled.img`
+  width:100%;
 `
 
 const BotaoDetalhes = styled.button`
@@ -75,6 +69,15 @@ const BotaoDetalhes = styled.button`
     height: 50px;
     font-size: xx-large;
     margin-right: 1vw;
+`
+
+const CardModal = styled.div`
+  width:60%;
+  border: 1px black solid;
+  background-color:white;
+`
+const BotaoAvaliar = styled.button`
+
 `
 
 const useStyles = makeStyles((theme) => ({
@@ -92,25 +95,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TripDetailsPage = (props) => {
-
-  const history = useHistory();
-
-  const goToApply = () => {
-    history.push("/trips/apply");
-  }
-
-  const [listaId, setLlistaId] = useState([])
+  const [viagemSelecionada, setViagemSelecionada] = useState('')
   const [listaViagens, setListaViagens] = useState([])
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [candidatos, setCandidatos] = useState([])
+
+  const history = useHistory();
+
   const handleOpen = () => {
     setOpen(true);
   };
+
   const handleClose = () => {
     setOpen(false);
   };
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token === null) {
+      history.push("/");
+    }
     axios
       .get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/trips')
       .then(response => {
@@ -123,9 +128,30 @@ const TripDetailsPage = (props) => {
 
   const onClickDetalhes = (id) => {
     console.log(id)
-    handleOpen()
+    {
+      axios
+        .get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/trip/${id}`,
+          {
+            headers: {
+              auth: `${localStorage.getItem("token")}`
+            }
+          })
+        .then(response => {
+          console.log(response.data.trip)
+          setViagemSelecionada(response.data.trip)
+          setCandidatos(response.data.trip.candidates)
+          handleOpen()
+        })
+        .catch(error => {
+          console.log(error, "use effect")
+        })
+    }
+
   }
 
+  const onClickAvaliar = (id) =>{
+    history.push(`/private/candidate/${id}`);
+  }
 
   return (
     <ListTripsPageContainer>
@@ -137,37 +163,44 @@ const TripDetailsPage = (props) => {
             <CardViagem>
               <ImgPlanet src='https://images2.minutemediacdn.com/image/upload/c_crop,h_711,w_1264,x_99,y_0/f_auto,q_auto,w_1100/v1567178616/shape/mentalfloss/screen_shot_2019-08-30_at_11.22.42_am.png'></ImgPlanet>
               <ContainerTripInfo>
-                <Nome>{viagem.name}</Nome>
-                <Local>Local: {viagem.planet}</Local>
-                <Data>Data: {viagem.date}</Data>
-                <Duracao>Duração: {viagem.durationInDays} dias</Duracao>
+                <p>{viagem.name}</p>
+                <p>Local: {viagem.planet}</p>
+                <p>Data: {viagem.date}</p>
+                <p>Duração: {viagem.durationInDays} dias</p>
               </ContainerTripInfo>
               <BotaoDetalhes onClick={() => onClickDetalhes(viagem.id)}>+</BotaoDetalhes>
-              <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                className={classes.modal}
-                open={open}
-                onClose={handleClose}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                  timeout: 500,
-                }}
-              >
-                <Fade in={open}>
-                  <div className={classes.paper}>
-                    <h2 id="transition-modal-title">Transition modal</h2>
-                    <p id="transition-modal-description">react-transition-group animates me.</p>
-                  </div>
-                </Fade>
-              </Modal>
             </CardViagem>
           )
         })
         }
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          className={classes.modal}
+          open={open}
+          onClose={handleClose}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={open}>
+            <CardModal>
+              <ImgPlanetModal src='https://images2.minutemediacdn.com/image/upload/c_crop,h_711,w_1264,x_99,y_0/f_auto,q_auto,w_1100/v1567178616/shape/mentalfloss/screen_shot_2019-08-30_at_11.22.42_am.png'></ImgPlanetModal>
+              <ContainerTripInfoModal>
+                <p id="transition-modal-title">{viagemSelecionada.name}</p>
+                <p id="transition-modal-description">Local: {viagemSelecionada.planet}</p>
+                <p>Data: {viagemSelecionada.date}</p>
+                <p>Duração: {viagemSelecionada.durationInDays} dias</p>
+                <p>candidatos: {candidatos.length}</p>
+                <BotaoAvaliar onClick={() => onClickAvaliar(viagemSelecionada.id)}>Avaliar candidatos</BotaoAvaliar>
+              </ContainerTripInfoModal>
+            </CardModal>
+          </Fade>
+        </Modal>
       </MainContainer>
-    </ListTripsPageContainer>
+    </ListTripsPageContainer >
   );
 }
 export default TripDetailsPage;

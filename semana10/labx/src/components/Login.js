@@ -66,7 +66,7 @@ const BotaoEntrar = styled.button`
 
 const Login = (props) => {
   const history = useHistory();
-  const { form, onChange } = useForm({ emailInserido: "", senha: "" });
+  const { form, onChange } = useForm({ emailInserido: "mel", senha: "123" });
 
   const handleInputChange = event => {
     const { name, value } = event.target;
