@@ -23,7 +23,7 @@ const Router = (props) => {
         <Route exact path="/singup">
           <SingUp />
         </Route>
-        <Route exact path="/trips/apply">
+        <Route exact path="/trips/apply/:id">
           <ApplyToTrip />
         </Route>
         <Route exact path="/trips/listTripsPage">

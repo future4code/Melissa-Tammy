@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import styled from 'styled-components'
-import HeaderPublic from './HeaderPublic';
+import HeaderPrivate from './HeaderPrivate';
 import { useHistory } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
@@ -114,7 +114,7 @@ const TripDetailsPage = (props) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token === null) {
-      history.push("/");
+      history.push("/login");
     }
     axios
       .get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/trips')
@@ -155,7 +155,7 @@ const TripDetailsPage = (props) => {
 
   return (
     <ListTripsPageContainer>
-      <HeaderPublic></HeaderPublic>
+      <HeaderPrivate></HeaderPrivate>
       <MainContainer>
         <Titulo>{listaViagens.length} VIAGENS FORAM ENCONTRADAS</Titulo>
         {listaViagens.map((viagem) => {

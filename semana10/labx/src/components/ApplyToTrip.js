@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import styled from 'styled-components'
 import HeaderPublic from './HeaderPublic';
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { useForm } from './hooks/useForm'
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -77,7 +77,7 @@ const BotaoEntrar = styled.button`
 
 
 const ApplyToTrip = (props) => {
-
+  const params = useParams();
   const history = useHistory();
   const { form, onChange } = useForm({ nome: "", idade: "", textoAplicacao: "", profissao: "", pais: "" });
 
@@ -105,7 +105,7 @@ const ApplyToTrip = (props) => {
     },
   ];
 
-  const onClickEntrar = () => {
+  const onClickInscrever = () => {
     const body = {
       name: form.nome,
       age: form.idade,
@@ -115,7 +115,7 @@ const ApplyToTrip = (props) => {
     }
     axios
       .post(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/trip/${props.id}`,
+        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/melissa-melonio-julian/trips/${params.id}/apply`,
         body,
         {
           headers: {
@@ -124,7 +124,8 @@ const ApplyToTrip = (props) => {
         }
       )
       .then((response) => {
-        console.log(response)
+        alert("Viagem cadastrada!")
+        history.push("/trips/listTripsPage");
       })
       .catch((error) => {
         console.log(error)
@@ -137,15 +138,34 @@ const ApplyToTrip = (props) => {
         <ContainerForm>
           <Titulo>INSCRIÇÃO</Titulo>
           <InputContainer>
-            <InputApply placeholder={"Nome"} value={form.nome} onChange={handleInputChange}></InputApply>
-            <InputApply placeholder={"Idade"} value={form.idade} onChange={handleInputChange} type={"number"}></InputApply>
-            <InputApply placeholder={"texto"} value={form.textoAplicacao} onChange={handleInputChange} type={"text"}></InputApply>
-            <InputApply placeholder={"Profissão"} value={form.profissao} onChange={handleInputChange} type={"text"}></InputApply>
+            <InputApply 
+            label={"Nome"} 
+            name="nome"
+            value={form.nome} 
+            onChange={handleInputChange}></InputApply>
+            <InputApply 
+            label={"Idade"} 
+            name="idade"
+            value={form.idade} 
+            onChange={handleInputChange} 
+            type={"number"}></InputApply>
+            <InputApply 
+            label={"texto"} 
+            name="textoAplicacao"
+            value={form.textoAplicacao} 
+            onChange={handleInputChange} 
+            type={"text"}></InputApply>
+            <InputApply 
+            label={"Profissão"} 
+            name="profissao"
+            value={form.profissao} 
+            onChange={handleInputChange} 
+            type={"text"}></InputApply>
             <TextField
               select
               label="Pais"
-              onChange={handleInputChange}
-              helperText="Please select your currency">
+              name="pais"
+              onChange={handleInputChange}>
               {paises.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
@@ -153,7 +173,7 @@ const ApplyToTrip = (props) => {
               ))}
             </TextField>
           </InputContainer>
-          <BotaoEntrar onClick={onClickEntrar}>Inscrever-se</BotaoEntrar>
+          <BotaoEntrar onClick={onClickInscrever}>Inscrever-se</BotaoEntrar>
         </ContainerForm>
     </ApplyToTripPageContainer>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
+import '../App.css'
 import styled from 'styled-components'
 import { useHistory } from "react-router-dom";
 import HeaderPrivate from './HeaderPrivate';
@@ -44,6 +45,12 @@ const BotaoMostrarMais = styled.button`
   }
 `
 
+const Foguete = styled.img`
+position:relative;
+top:400px;
+left:-400px;
+`
+
 const HomePagePrivate = (props) => {
   const history = useHistory();
   const goToTripDetailsPage = () =>{
@@ -59,7 +66,7 @@ const HomePagePrivate = (props) => {
     const token = localStorage.getItem("token");
 
     if (token === null) {
-      history.push("/");
+      history.push("/login");
     }
   }, [history]);
     return (
@@ -67,7 +74,7 @@ const HomePagePrivate = (props) => {
         <HeaderPrivate></HeaderPrivate>
         <BotaoMostrarMais onClick={goToTripDetailsPage}>Detalhes de viagens</BotaoMostrarMais>
         <BotaoMostrarMais onClick={goToCreateTripPage}>Criar viagens</BotaoMostrarMais>
-        <BotaoMostrarMais onClick={goToDecideCandidatePage}>Decidir Candidatos</BotaoMostrarMais>
+        <Foguete className='foguetinho' src="https://img.icons8.com/color/96/000000/rocket.png"/>
       </HomePageContainer>
     );
   }

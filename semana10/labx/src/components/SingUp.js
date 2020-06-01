@@ -64,7 +64,6 @@ const BotaoEntrar = styled.button`
 
 
 const Login = (props) => {
-  const history = useHistory();
   const { form, onChange } = useForm({ emailInserido: "", senha: "" });
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -98,7 +97,7 @@ const Login = (props) => {
     <LoginPageConatiner>
       <HeaderPublic></HeaderPublic>
       <ContainerForm>
-        <h1>Sing Up</h1>
+        <h1>Sign Up</h1>
         <InputContainer>
           <InputLogin 
           label="e-mail" 

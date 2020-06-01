@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios"
-import styled from 'styled-components'
-import Button from '@material-ui/core/Button';
-
+import styled from 'styled-components';
 import { useHistory } from "react-router-dom";
 
 
@@ -17,10 +14,17 @@ const HeaderContainer = styled.header`
     padding-right:5vw;
     justify-content:space-between;
 `
-const Lab = styled.h1`
-    color:white;
+
+const ContainerBotoes = styled.div`
+  width:20%;
+  height:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+
 `
-const BotaoLogin = styled.button`
+
+const BotaoLogOut = styled.button`
    color: white;
    width:7vw;
    min-height:20px;
@@ -40,34 +44,25 @@ const BotaoLogin = styled.button`
        border: 1px #ffffff73 solid;
    }
 `
-const ContainerBotoes = styled.div`
-  width:20%;
-  height:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items: center;
-
-`
 
 const HeaderPublic = (props) => {
 
   const history = useHistory();
 
-  const goToLoginPage = () => {
-    history.push("/login");
-  }
-  const goToSingUpPage = () => {
-    history.push("/singup");
-  }
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.reload(false);
+
+  };
   const goToHomePage = () => {
-    history.push("/");
+    history.push("/private");
   }
 
   return (
     <HeaderContainer>
       <img onClick={goToHomePage} src="https://img.icons8.com/cotton/64/000000/rocket-take-off.png" />
       <ContainerBotoes>
-
+      <BotaoLogOut onClick={handleLogout}>Logout</BotaoLogOut>
       </ContainerBotoes>
     </HeaderContainer>
   );

@@ -59,12 +59,29 @@ const ImgPlanet = styled.img`
   width: 100%;
 `
 
+const BotaoInscrever = styled.button`
+  width:100%;
+  color: white;
+  min-height:30px;
+  min-width:95px;
+  padding:1vw;
+  margin-top:1vw;
+  background-color:#009085;
+  border:none;
+  font-size:1rem;
+  text-transform: uppercase;
+  transition: 0.7s;
+  :hover{
+      background-color: #004641;
+  }
+`
+
 const ListTripsPage = (props) => {
 
   const history = useHistory();
 
-  const goToApply = () =>{
-    history.push("/trips/apply");
+  const goToApply = (id) =>{
+    history.push(`/trips/apply/${id}`);
   }
 
   const [listaViagens, setListaViagens] = useState([])
@@ -92,7 +109,7 @@ const ListTripsPage = (props) => {
               <Local>Local: {viagem.planet}</Local>
               <Data>Data: {viagem.date}</Data>
               <Duracao>Duração: {viagem.durationInDays} dias</Duracao>
-              <button onClick={goToApply}>Inscrever-se</button>
+              <BotaoInscrever onClick={() => goToApply(viagem.id)}>Inscrever-se</BotaoInscrever>
             </CardViagem>
           )
         })

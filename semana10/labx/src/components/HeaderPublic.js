@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios"
-import styled from 'styled-components'
-import Button from '@material-ui/core/Button';
-
+import styled from 'styled-components';
 import { useHistory } from "react-router-dom";
 
 
@@ -55,18 +52,21 @@ const HeaderPublic = (props) => {
   const goToLoginPage = () => {
     history.push("/login");
   }
+
   const goToSingUpPage = () => {
     history.push("/singup");
   }
+
   const goToHomePage = () => {
     history.push("/");
   }
+  
   return (
     <HeaderContainer>
       <img onClick={goToHomePage} src="https://img.icons8.com/cotton/64/000000/rocket-take-off.png" />
       <ContainerBotoes>
         <BotaoLogin onClick={goToLoginPage}>Login</BotaoLogin>
-        <BotaoLogin onClick={goToSingUpPage}>Sing Up</BotaoLogin>
+        <BotaoLogin onClick={goToSingUpPage}>Sign Up</BotaoLogin>
       </ContainerBotoes>
     </HeaderContainer>
   );

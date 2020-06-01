@@ -151,19 +151,17 @@ const CreateTripPage = (props) => {
               name="planeta"
               value={form.planeta}
               onChange={handleInputChange}
-              type={"text"} />
-            <textarea
+              />
+            <InputForm
               label="data"
               name="data"
               value={form.data}
-              onChange={handleInputChange}
-              type={"date"} />
+              onChange={handleInputChange}/>
             <InputForm
               label="descricao"
               name="descricao"
               value={form.descricao}
-              onChange={handleInputChange}
-              type={"text"} />
+              onChange={handleInputChange}/>
             <InputForm
               label="Duracao em Dias"
               name="duracaoEmDias"

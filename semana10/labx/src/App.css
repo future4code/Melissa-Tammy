@@ -12,4 +12,18 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed
+
+}
+
+.foguetinho {
+  animation-name: example;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  width: 2%;
+}
+
+@keyframes example {
+  0%   {top:300px;}
+  50%  {top:0px;}
+  100%  {left: 0px;}
 }
