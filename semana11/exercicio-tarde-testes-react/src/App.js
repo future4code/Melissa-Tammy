@@ -21,6 +21,8 @@ const App = () => {
     const newPostsList = [newPost, ...postsList];
 
     setPostsList(newPostsList);
+
+    setInputValue('')
   };
 
   const deletePost = postId => {
