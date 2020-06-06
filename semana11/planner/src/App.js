@@ -55,6 +55,7 @@ const App = (props) => {
         .then((response) => {
           alert("Tarefa inserida")
           pegaTarefa()
+          setNovaTarefa('')
         })
         .catch((error) => {
           alert(error)
@@ -120,7 +121,9 @@ const App = (props) => {
                   <Tarefa
                     completa={tarefa.completa}
                     onClick={() => alteraStatus(tarefa.id, tarefa.completa)}
-                    onDoubleClick={() => apagaTarefa(tarefa.id)}>
+                    onDoubleClick={() => apagaTarefa(tarefa.id)} 
+                    key={tarefa.id}
+                    data-testid={'item-tarefa'}>
                     {tarefa.text}
                   </Tarefa>
                 )
@@ -137,7 +140,9 @@ const App = (props) => {
                   <Tarefa
                     completa={tarefa.completa}
                     onClick={() => alteraStatus(tarefa.id, tarefa.completa)}
-                    onDoubleClick={() => apagaTarefa(tarefa.id)}>
+                    onDoubleClick={() => apagaTarefa(tarefa.id)} 
+                    key={tarefa.id}
+                    data-testid={'item-tarefa'}>
                     {tarefa.text}
                   </Tarefa>
                 )
@@ -154,7 +159,9 @@ const App = (props) => {
                   <Tarefa
                     completa={tarefa.completa}
                     onClick={() => alteraStatus(tarefa.id, tarefa.completa)}
-                    onDoubleClick={() => apagaTarefa(tarefa.id)}>
+                    onDoubleClick={() => apagaTarefa(tarefa.id)} 
+                    key={tarefa.id}
+                    data-testid={'item-tarefa'}>
                     {tarefa.text}
                   </Tarefa>
                 )
@@ -171,7 +178,9 @@ const App = (props) => {
                   <Tarefa
                     completa={tarefa.completa}
                     onClick={() => alteraStatus(tarefa.id, tarefa.completa)}
-                    onDoubleClick={() => apagaTarefa(tarefa.id)}>
+                    onDoubleClick={() => apagaTarefa(tarefa.id)} key={tarefa.id}
+                    key={tarefa.id}
+                    data-testid={'item-tarefa'}>
                     {tarefa.text}
                   </Tarefa>
                 )
@@ -188,7 +197,9 @@ const App = (props) => {
                   <Tarefa
                     completa={tarefa.completa}
                     onClick={() => alteraStatus(tarefa.id, tarefa.completa)}
-                    onDoubleClick={() => apagaTarefa(tarefa.id)}>
+                    onDoubleClick={() => apagaTarefa(tarefa.id)} 
+                    key={tarefa.id}
+                    data-testid={'item-tarefa'}>
                     {tarefa.text}
                   </Tarefa>
                 )
@@ -205,7 +216,9 @@ const App = (props) => {
                   <Tarefa
                     completa={tarefa.completa}
                     onClick={() => alteraStatus(tarefa.id, tarefa.completa)}
-                    onDoubleClick={() => apagaTarefa(tarefa.id)}>
+                    onDoubleClick={() => apagaTarefa(tarefa.id)} 
+                    key={tarefa.id}
+                    data-testid={'item-tarefa'}>
                     {tarefa.text}
                   </Tarefa>
                 )
@@ -222,7 +235,9 @@ const App = (props) => {
                   <Tarefa
                     completa={tarefa.completa}
                     onClick={() => alteraStatus(tarefa.id, tarefa.completa)}
-                    onDoubleClick={() => apagaTarefa(tarefa.id)}>
+                    onDoubleClick={() => apagaTarefa(tarefa.id)} 
+                    key={tarefa.id}
+                    data-testid={'item-tarefa'}>
                     {tarefa.text}
                   </Tarefa>
                 )
