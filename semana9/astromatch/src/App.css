@@ -1,0 +1,58 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+h1{
+  font-family: 'Righteous', cursive;
+}
+
+.botoes button{
+  width:20vw;
+  height: 20vw;
+  border-radius: 100%;
+  background-color: white;
+  border:none;
+  transition:0.3s
+}
+
+.botoes button:focus{
+  outline:none;
+}
+
+.botaoNope:active{
+  color:white;
+  background-color:red;
+}
+
+.botaoYep:active{
+  color:white;
+  background-color:green;
+}
+
+.white{
+  color:white;
+}
+
+@keyframes example {
+20%{
+  transform: rotate(0deg);
+  left:0vw;
+  opacity: 100%;
+}
+80%{
+  transform: rotate(5deg);
+  left:99vw;
+  opacity: 10%;
+}
+}
+
+
+@media (min-width: 500px) {
+  .botoes{
+    background-color: black;
+  }
+
+}
