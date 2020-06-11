@@ -1,0 +1,29 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+  
+}
+body{
+  background-position: 100px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://4.bp.blogspot.com/-EFQEXmmdBXo/XKG5Noll6xI/AAAAAAAABGw/2epUYa2fuEUzCK0Q9J4ncAr88cG5Q2XSQCKgBGAs/w3840-h1600-p-k-no-nu/space-astronaut-sci-fi-uhdpaper.com-4K-111.jpg');
+  background-position: 50% 0 ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed
+
+}
+
+.foguetinho {
+  animation-name: example;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  width: 2%;
+}
+
+@keyframes example {
+  0%   {top:300px;}
+  50%  {top:0px;}
+  100%  {left: 0px;}
+}
