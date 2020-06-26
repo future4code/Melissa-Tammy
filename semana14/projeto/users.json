@@ -1,0 +1,14 @@
+[
+  {
+    "nome": "vit",
+    "cpf": "465.79.789-47",
+    "dtNasc": "21-45-96",
+    "conta": [
+      {
+        "data": "12-45-63",
+        "descricao": "Add money",
+        "valor": 50
+      }
+    ]
+  }
+]
