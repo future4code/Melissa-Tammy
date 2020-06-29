@@ -15,11 +15,8 @@ switch (opcao) {
         const newUserAccount: UserAccount = new UserAccount(newName, newAge, newCpf)
         if (!(newAge < 18)) {
             try {
-                console.log(newUserAccount.getBalance())
                 userAccountList.push(newUserAccount)
                 fileName.writeObjectToFile(userAccountList)
-                console.log(newUserAccount.getCpf())
-
             } catch{
                 console.log("erro")
             }
@@ -28,15 +25,28 @@ switch (opcao) {
         }
         break;
     case "saldo":
-        const cpfInserido: string = process.argv[2]
-        userAccountList.map((item: UserAccount) => {
-            console.log(item.getCpf())
-            // if (item.getCpf() === cpfInserido) {
-            //     return console.log("Saldo: R$", item.getBalance())
-            // }
-
+        const cpfInserido: string = process.argv[3]
+        userAccountList.map((item: any) => {
+            if (item.cpf === cpfInserido) {
+                return console.log("Saldo: R$", item.balance)
+            }
         })
         break;
+    case "addSaldo":
+        try {
+            const cpfInserido: string = process.argv[3]
+            const novoSaldo: number = Number(process.argv[4])
+            userAccountList.map((item: any) => {
+                if (item.cpf === cpfInserido) {
+                    item.balance+=novoSaldo
+                    fileName.writeObjectToFile(userAccountList)
+                }
+            })
+        } catch{
+            console.log("erro")
+        }
+        break;
+
     default:
         console.log("Erro de opção selecionada")
         break;

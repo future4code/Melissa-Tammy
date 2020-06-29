@@ -14,10 +14,17 @@
     "transactions": []
   },
   {
-    "balance": 0,
+    "balance": 5,
     "name": "criança",
     "age": 50,
     "cpf": "aaaaaaaaaaaaaaaaaaa",
+    "transactions": []
+  },
+  {
+    "balance": 333,
+    "name": "Véio",
+    "age": 111,
+    "cpf": "000.000.000-00",
     "transactions": []
   }
 ]

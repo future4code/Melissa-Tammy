@@ -16,13 +16,14 @@ export class UserAccount {
     private name: string
     private age: number
     private cpf: string
-    private balance: number = 0
+    private balance: number
     private transactions: Transaction[]
 
     constructor(newName: string, newAge: number, newCpf: string) {
         this.name = newName
         this.age = newAge
         this.cpf = newCpf
+        this.balance = 0
         this.transactions = []
     }
 
@@ -34,7 +35,7 @@ export class UserAccount {
     }
 
     public addBalance(value: number): void {
-        //Aqui deve ser inserida a lógica de adicionar saldo 
+        this.balance += value
         console.log('Saldo atualizado com sucesso')
     }
 }
