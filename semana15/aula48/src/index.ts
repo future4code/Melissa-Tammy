@@ -25,12 +25,17 @@ switch (opcao) {
         }
         break;
     case "saldo":
-        const cpfInserido: string = process.argv[3]
-        userAccountList.map((item: any) => {
-            if (item.cpf === cpfInserido) {
-                return console.log("Saldo: R$", item.balance)
-            }
-        })
+        try {
+            const cpfInserido: string = process.argv[3]
+            userAccountList.map((item: any) => {
+                console.log(item.getCpf())
+                if (item.cpf === cpfInserido) {
+                    return console.log("Saldo: R$", item.balance)
+                }
+            })
+        } catch{
+            console.log("erro")
+        }
         break;
     case "addSaldo":
         try {
@@ -38,7 +43,7 @@ switch (opcao) {
             const novoSaldo: number = Number(process.argv[4])
             userAccountList.map((item: any) => {
                 if (item.cpf === cpfInserido) {
-                    item.balance+=novoSaldo
+                    item.balance += novoSaldo
                     fileName.writeObjectToFile(userAccountList)
                 }
             })
@@ -48,6 +53,7 @@ switch (opcao) {
         break;
 
     default:
+
         console.log("Erro de opção selecionada")
         break;
 }
