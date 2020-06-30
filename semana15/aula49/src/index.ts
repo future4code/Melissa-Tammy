@@ -31,3 +31,8 @@ a. Quantas vezes a mensagem "Chamando o construtor da classe Customer" foi impre
 b. Quantas vezes a mensagem "Chamando o construtor da classe User" foi impressa no terminal? Por quê?
   Somente uma vez, pois a classe Customer herda User.
 */
+
+/*_______________E X E R C Í C I O 3 _______________
+a. Seria possível imprimir a senha (password) atrelada a essa instância? Por quê?
+  Não, pois não exite um método get.
+*/
