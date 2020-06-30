@@ -15,7 +15,7 @@ function createUser(id: string, email: string, name: string, password: string, c
 //const myPerson2 = createPerson("Robson");
 //const myPerson3: User = new User(`${Date.now()}`, "mel@gmail.com ", "Mel", "13256")
 const myPerson4: Customer = new Customer(`${Date.now()}`, "mel@gmail.com ", "Mel", "13256", "cartão")
-console.log(myPerson4);
+console.log(myPerson4.introduceYourself());
 
 
 /*_______________E X E R C Í C I O 1 _______________
@@ -35,4 +35,12 @@ b. Quantas vezes a mensagem "Chamando o construtor da classe User" foi impressa 
 /*_______________E X E R C Í C I O 3 _______________
 a. Seria possível imprimir a senha (password) atrelada a essa instância? Por quê?
   Não, pois não exite um método get.
+*/
+
+/*_______________E X E R C Í C I O 4 _______________
+  Linhas 32 a 34 do './user.ts'
+*/
+
+/*_______________E X E R C Í C I O 5 _______________
+  Linha 36 do './user.ts'
 */
