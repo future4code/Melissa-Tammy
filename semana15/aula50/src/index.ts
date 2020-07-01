@@ -69,3 +69,6 @@ c. Nós pedimos para criar somente os getters dessa classe. Pense num motivo par
   Porque outra classe será responsável por settar os dados.
 */
 
+/*____________EXERCÍCIO 7____________
+  ok
+*/
