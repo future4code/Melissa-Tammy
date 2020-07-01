@@ -21,7 +21,14 @@ function createUser(id: string, email: string, name: string, password: string, c
 //const myPerson5: Employee = new Employee(`${Date.now()}`, "mel@gmail.com ", "Mel", "13256", new Date(2020, 11, 1), 1500)
 const myPerson6: Seller = new Seller(`${Date.now()}`, "mel@gmail.com ", "Mel", "13256", new Date(2020, 11, 1), 1500)
 
-console.log(myPerson6.getName());
+myPerson6.setSalesQuantity(5)
+console.log("Com get: ", myPerson6.getSalesQuantity());
+console.log(myPerson6);
+myPerson6.setSalesQuantity(2)
+console.log("Com get: ", myPerson6.getSalesQuantity());
+console.log(myPerson6);
+
+
 
 
 
@@ -68,4 +75,9 @@ b. Imprima as informações dessa instância no terminal. Quais dados são poss�
     os mesmos parâmetros de Employee/User
   b. Imprima todas as informações da instância que você criou individualmente (ou seja, cada uma em uma linha própria). O que você conseguiu imprimir? O que não conseguiu? Por quê?
     Todos exceto Password, pois não há o metodo get.
+*/
+
+/*_______________E X E R C Í C I O 9 _______________
+a. Agora, teste o método setter, atualizando esse valor para o que você quiser. É possível imprimir no terminal o valor salesQuantity da instância que você criou? Por quê?
+  Sim, pois há o metodo get
 */
