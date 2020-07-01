@@ -1,12 +1,15 @@
-import {Place} from './Place'
+import { Place } from './Place'
 
 export class Commerce extends Place {
     constructor(
-      protected floorsQuantity: number,
-      // Refere-se à quantidade de andares do lugar
-  
-      cep: string
+        protected floorsQuantity: number,
+
+        cep: string
     ) {
-      super(cep);
+        super(cep);
     }
-  }
+
+    public getFloorsQuantity(): number {
+        return this.floorsQuantity;
+    }
+}

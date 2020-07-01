@@ -1,6 +1,9 @@
 import { Client } from './Client'
 import { Place } from './Place'
-
+import { Industry } from './Industry'
+import { Commerce } from './Commerce'
+import { Residence } from './Residence'
+import { ResidentialClient } from './ResidentialClient'
 type person = {
   name: string
 }
@@ -43,4 +46,9 @@ b. Pense e responda: o que precisaríamos fazer para conseguir efetivamente cria
   Porque precisa ter um acesso restrito a um dos seus atributos, o que é impossível de se fazer em interfaces.
 3. Por que a classe `Place` é uma Classe Abstrata?
   Porque não enxergamos uma situação em que seria necessário criar uma instância dessa classe.
+*/
+
+/*____________EXERCÍCIO 4____________
+a. Que métodos e propriedades essa classe possui? Por quê?
+  Todos do ResidentialClient, Residence e Place.
 */
