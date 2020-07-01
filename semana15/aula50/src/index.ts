@@ -55,8 +55,7 @@ c. Nós pedimos para criar somente os getters dessa classe. Pense num motivo par
 */
 
 /*____________EXERCÍCIO 8____________
-  ok
-*/
+
 const clientManager = new ClientManager()
 
 const residentialClient = new ResidentialClient("Melissa", 1111, 100, "1111111", 1, "111111")
@@ -68,4 +67,7 @@ clientManager.registerClient(commercialClient)
 const industrialClient = new IndustrialClient("Melonio", 3333, 300, "333333", 3, "333333")
 clientManager.registerClient(industrialClient)
 
+console.log(clientManager.calculateBillOfClient(1111))
+clientManager.deleteUser(1111)
 console.log(clientManager)
+*/
