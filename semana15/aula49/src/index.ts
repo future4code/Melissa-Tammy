@@ -21,12 +21,8 @@ function createUser(id: string, email: string, name: string, password: string, c
 //const myPerson5: Employee = new Employee(`${Date.now()}`, "mel@gmail.com ", "Mel", "13256", new Date(2020, 11, 1), 1500)
 const myPerson6: Seller = new Seller(`${Date.now()}`, "mel@gmail.com ", "Mel", "13256", new Date(2020, 11, 1), 1500)
 
-myPerson6.setSalesQuantity(5)
-console.log("Com get: ", myPerson6.getSalesQuantity());
-console.log(myPerson6);
 myPerson6.setSalesQuantity(2)
-console.log("Com get: ", myPerson6.getSalesQuantity());
-console.log(myPerson6);
+console.log(myPerson6.calculateTotalSalary());
 
 
 
@@ -52,11 +48,11 @@ a. Seria possível imprimir a senha (password) atrelada a essa instância? Por q
 */
 
 /*_______________E X E R C Í C I O 4 _______________
-  Linhas 32 a 34 do './user.ts'
+  './user.ts'
 */
 
 /*_______________E X E R C Í C I O 5 _______________
-  Linha 36 do './user.ts'
+  './user.ts'
 */
 
 /*_______________E X E R C Í C I O 6 _______________
@@ -67,7 +63,7 @@ b. Imprima as informações dessa instância no terminal. Quais dados são poss�
 */
 
 /*_______________E X E R C Í C I O 7 _______________
-  Linha 28 a 31 './Employee.ts'
+  './Employee.ts'
 */
 
 /*_______________E X E R C Í C I O 8 _______________
@@ -80,4 +76,13 @@ b. Imprima as informações dessa instância no terminal. Quais dados são poss�
 /*_______________E X E R C Í C I O 9 _______________
 a. Agora, teste o método setter, atualizando esse valor para o que você quiser. É possível imprimir no terminal o valor salesQuantity da instância que você criou? Por quê?
   Sim, pois há o metodo get
+*/
+
+/*_______________E X E R C Í C I O 10 _______________
+a. Crie um novo vendedor. Atribua a ele um valor para a salesQuantity. Convoque a função calculateTotalSalary e  imprima no terminal o valor. O que foi impresso no terminal? Por quê?
+  Apenas o valor baseSalary + 400, pois salesQuantity é private e não consegue ser acessada.
+*/
+
+/*_______________E X E R C Í C I O 11 _______________
+  './Employee.ts' './Seller.ts'
 */
