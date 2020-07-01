@@ -52,3 +52,10 @@ b. Pense e responda: o que precisaríamos fazer para conseguir efetivamente cria
 a. Que métodos e propriedades essa classe possui? Por quê?
   Todos do ResidentialClient, Residence e Place.
 */
+
+/*____________EXERCÍCIO 5____________
+a. Quais as semelhanças dessa classe com a ResidentialClient?
+  Ambos herdam Place e Client.
+b. Quais as diferenças dessa classe com a ResidentialClient?
+  CNPJ, CPF, residentsQuantity e floorsQuantity. Que são propriedades de Residence e Commerce.
+*/

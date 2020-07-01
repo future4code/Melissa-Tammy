@@ -1,6 +1,7 @@
 import { Residence } from './Residence'
+import { Client } from './Client'
 
-export class ResidentialClient extends Residence {
+export class ResidentialClient extends Residence implements Client {
     constructor(
         public name: string,
         public registrationNumber: number,
