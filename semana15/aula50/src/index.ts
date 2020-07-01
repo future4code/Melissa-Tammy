@@ -59,3 +59,13 @@ a. Quais as semelhanças dessa classe com a ResidentialClient?
 b. Quais as diferenças dessa classe com a ResidentialClient?
   CNPJ, CPF, residentsQuantity e floorsQuantity. Que são propriedades de Residence e Commerce.
 */
+
+/*____________EXERCÍCIO 6____________
+a. De qual classe a `IndustrialClient` deve ser filha? Por quê?
+  Industry e CLient, pois herdam as suas propriedades.
+b. Que interface a `IndustrialClient` implementa? Por quê?
+  Client, pois herda name, registrationNumber, consumedEnergy.
+c. Nós pedimos para criar somente os getters dessa classe. Pense num motivo para isso: por que só os getters?
+  Porque outra classe será responsável por settar os dados.
+*/
+
