@@ -4,28 +4,9 @@ import { Industry } from './Industry'
 import { Commerce } from './Commerce'
 import { Residence } from './Residence'
 import { ResidentialClient } from './ResidentialClient'
-type person = {
-  name: string
-}
-
-function createPerson(name: string): person {
-  return { name: name }
-}
-
-//const myPerson2 = createPerson("Robson");
-/*const myPerson3: Client = {
-  name: "Goli",
-  registrationNumber: 1,
-  consumedEnergy: 100,
-
-  calculateBill: () => {
-    return 2;
-  }
-}*/
-
-//const novoLugar: Place = new Place("45844548")
-
-//console.log(novoLugar);
+import {CommercialClient} from './CommercialClient'
+import {IndustrialClient} from './IndustrialClient'
+import {ClientManager} from './ClientManager'
 
 /*____________EXERCÍCIO 1____________
 a. Quais propriedades você conseguiu imprimir? Teve alguma que não foi possível? Por que isso aconteceu?
@@ -72,3 +53,19 @@ c. Nós pedimos para criar somente os getters dessa classe. Pense num motivo par
 /*____________EXERCÍCIO 7____________
   ok
 */
+
+/*____________EXERCÍCIO 8____________
+  ok
+*/
+const clientManager = new ClientManager()
+
+const residentialClient = new ResidentialClient("Melissa", 1111, 100, "1111111", 1, "111111")
+clientManager.registerClient(residentialClient)
+
+const commercialClient = new CommercialClient("Tammy", 2222, 200, "22222222", 2, "222222")
+clientManager.registerClient(commercialClient)
+
+const industrialClient = new IndustrialClient("Melonio", 3333, 300, "333333", 3, "333333")
+clientManager.registerClient(industrialClient)
+
+console.log(clientManager)
