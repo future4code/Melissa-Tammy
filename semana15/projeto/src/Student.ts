@@ -1,17 +1,12 @@
-import { Person } from './Person'
+import { User } from './User'
+import * as moment from "moment"
 
-export class Student extends Person {
+export class Student implements User {
     constructor(
-        protected hobby: string,
-        id: number,
-        name: string,
-        email: string,
-        birth: string
-    ) {
-        super(id, name, email, birth);
-    }
-
-    public getHobby(): string {
-        return this.hobby
-    }
+        public hobby: string,
+        public id: number,
+        public name: string,
+        public email: string,
+        public birth: moment.Moment
+    ) { }
 }

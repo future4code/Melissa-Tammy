@@ -1,23 +1,18 @@
-import { Person } from './Person'
+import { User } from './User'
+import * as moment from "moment"
 
-export class Teacher extends Person {
+export class Teacher implements User {
     constructor(
-        protected expertise: EXPERTISE,
-        id: number,
-        name: string,
-        email: string,
-        birth: string
+        public expertise: TEACHER_SPECIALTY[],
+        public id: number,
+        public name: string,
+        public email: string,
+        public birth: moment.Moment
     ) {
-        super(id, name, email, birth);
     }
-
-    public getExpertise(): string {
-        return this.expertise
-    }
-
 }
 
-export enum EXPERTISE {
+export enum TEACHER_SPECIALTY {
     REACT = "REACT",
     REDUX = "REDUX",
     CSS = "CSS",
