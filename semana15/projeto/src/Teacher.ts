@@ -1,5 +1,5 @@
 import { User } from './User'
-import * as moment from "moment"
+import moment from "moment"
 
 export class Teacher implements User {
     constructor(
