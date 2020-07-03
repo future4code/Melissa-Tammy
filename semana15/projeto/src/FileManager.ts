@@ -13,6 +13,7 @@ export class FileManager {
 
   public readFile(): any {
     const data = fs.readFileSync(this.filePath);
+
     return JSON.parse(data.toString());
   }
 }
