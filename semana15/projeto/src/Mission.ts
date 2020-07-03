@@ -6,7 +6,7 @@ export abstract class Mission {
     private name: string = "";
   
     constructor(
-      private id: string,
+      private id: number,
       private startDate: moment.Moment,
       private endDate: moment.Moment,
       private teachers: Teacher[] = [],
@@ -14,7 +14,7 @@ export abstract class Mission {
       private currentModule: number|undefined = undefined
     ) {}
   
-    public getId(): string {
+    public getId(): number {
       return this.id;
     }
   

@@ -1,0 +1,12 @@
+[
+{
+    "expertise": [
+      "REACT",
+      " REDUX"
+    ],
+    "id": 1,
+    "name": "Professor",
+    "email": "prof@gmail.com",
+    "birth": "1990-10-10T03:00:00.000Z"
+  }
+]
