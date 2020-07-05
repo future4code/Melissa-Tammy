@@ -11,8 +11,8 @@ import { FileManager } from './FileManager'
 CreateStudent - estanciar um Student
 CreateTeacher - estanciar um Teacher
 CreateMission - estanciar uma Mission
-AddStudentToMission TODO
-AddTeacherToMission TODO
+AddStudentToMission 
+AddTeacherToMission 
 getAgeById TODO
 */
 let option: string | number = process.argv[2]
@@ -33,17 +33,16 @@ let arrayNightMission = arrayMissions.naNight
 
 //Variáveis auxiliares na criação de uma nova Mission
 let typeCreate: any = Student
-let name = ''
-
+let name: string = ''
+let id: number = 0
 //Função que cria student, teacher e mission e altera os respectivos arquivos 
 function create(newInstance: Student | Teacher | Mission, array: any, fm: any) {
     //A manipulação do arquívo missions é diferente por conter 2 arrays dentro do mesmo arquivo, separando as turmas por período
-    if (typeCreate=== Mission) {
-            let fullTime = arrayFullTimeMission
-            let naNight = arrayNightMission
-            console.log("chegou")
-            array.push(newInstance)
-            fm.writeFile({ fullTime, naNight })
+    if (typeCreate === Mission) {
+        let fullTime = arrayFullTimeMission
+        let naNight = arrayNightMission
+        array.push(newInstance)
+        fm.writeFile({ fullTime, naNight })
     } else {
         array.push(newInstance)
         fm.writeFile(array)
@@ -117,7 +116,6 @@ switch (option) {
                 Number(process.argv[8]),
                 name
             )
-            newMission.setName(process.argv[10])
             create(newMission, auxArray, fmMissions)
         }
         catch{
@@ -125,13 +123,128 @@ switch (option) {
         }
         break;
     case 'AddStudentToMission':
+        name = process.argv[3]
+        let newStudent = new Student(
+            process.argv[4],
+            Number(process.argv[5]),
+            process.argv[6],
+            process.argv[7],
+            moment(process.argv[8], "DD/MM/YYYY")
+        )
+        let fullTime = arrayFullTimeMission
+        let naNight = arrayNightMission
+        try {
+            if (name.indexOf("-na-night") == -1) {
+                const auxArrayFullTimeMission = arrayFullTimeMission.map((item: any) =>
+                    new FullTimeMission(
+                        item.id,
+                        item.startDate,
+                        item.endDate,
+                        item.teachers,
+                        item.students,
+                        item.currentModule,
+                        item.name)
+                )
+                auxArrayFullTimeMission.map((item: Mission) => {
+                    if (item.getName() === name) {
+                        item.addStudent(newStudent.name)
+                    }
+                })
+                fullTime = auxArrayFullTimeMission
+                fmMissions.writeFile({ fullTime, naNight })
+            } else {
+                console.log(name)
+                const auxArrayNightMission = arrayNightMission.map((item: any) =>
+                    new NightMission(
+                        item.id,
+                        item.startDate,
+                        item.endDate,
+                        item.teachers,
+                        item.students,
+                        item.currentModule,
+                        item.name)
+                )
+                auxArrayNightMission.find((item: Mission) => {
+                    if (item.getName() === name) {
+                        item.addStudent(newStudent.name)
+                    }
+                })
+                console.log(auxArrayNightMission)
 
+                naNight = auxArrayNightMission
+                fmMissions.writeFile({ fullTime, naNight })
+            }
+
+        } catch{
+            console.log("erro")
+        }
         break;
     case 'AddTeacherToMission':
+        name = process.argv[3]
+        let aux: any[] = process.argv[3].split(',').map(item => {
+            return item
+        })
+        let newTeacher = new Teacher(
+            aux,
+            Number(process.argv[4]),
+            process.argv[5],
+            process.argv[6],
+            moment(process.argv[7], "DD/MM/YYYY")
+        )
+        try {
+            let fullTime = arrayFullTimeMission
+            let naNight = arrayNightMission
+            if (name.indexOf("-na-night") == -1) {
+                const auxArrayFullTimeMission = arrayFullTimeMission.map((item: any) =>
+                    new FullTimeMission(
+                        item.id,
+                        item.startDate,
+                        item.endDate,
+                        item.teachers,
+                        item.students,
+                        item.currentModule,
+                        item.name)
+                )
+                auxArrayFullTimeMission.map((item: Mission) => {
+                    if (item.getName() === name) {
+                        item.addTeacher(newTeacher.name)
+                    }
+                })
+                fullTime = auxArrayFullTimeMission
+                fmMissions.writeFile({ fullTime, naNight })
+            } else {
+                console.log(name)
+                const auxArrayNightMission = arrayNightMission.map((item: any) =>
+                    new NightMission(
+                        item.id,
+                        item.startDate,
+                        item.endDate,
+                        item.teachers,
+                        item.students,
+                        item.currentModule,
+                        item.name)
+                )
+                auxArrayNightMission.find((item: Mission) => {
+                    if (item.getName() === name) {
+                        item.addTeacher(newTeacher.name)
+                    }
+                })
+                console.log(auxArrayNightMission)
 
+                naNight = auxArrayNightMission
+                fmMissions.writeFile({ fullTime, naNight })
+            }
+
+        } catch{
+            console.log("erro")
+        }
         break;
     case 'getAgeById':
-
+        let auxId = process.argv[3]
+        arraySudents.map((item: any) => {
+            if (item.id === auxId) {
+            }
+        })
         break;
     default:
         console.log("Erro")

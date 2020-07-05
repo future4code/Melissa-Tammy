@@ -7,8 +7,8 @@ export abstract class Mission {
     private id: number,
     private startDate: moment.Moment,
     private endDate: moment.Moment,
-    private teachers: Teacher[] = [],
-    private students: Student[] = [],
+    private teachers: string[] = [],
+    private students: string[] = [],
     private currentModule: number | undefined = undefined,
     private name: string
   ) {}
@@ -17,7 +17,7 @@ export abstract class Mission {
     return this.id;
   }
 
-  public getName(name: string): string {
+  public getName(): string {
     return this.name;
   }
 
@@ -33,11 +33,11 @@ export abstract class Mission {
     return this.currentModule;
   }
 
-  public addTeacher(teacher: Teacher) {
+  public addTeacher(teacher: string) {
     this.teachers.push(teacher);
   }
 
-  public addStudent(student: Student) {
+  public addStudent(student: string) {
     this.students.push(student);
   }
 
