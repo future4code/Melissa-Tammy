@@ -1,20 +1,28 @@
-import {PostDatabase} from '../../src/data/PostDatabase'
+import { PostDatabase } from '../../src/data/PostDatabase'
 
 test("Create Post", async () => {
-    const postDB = new PostDatabase;
-    const post = {
-      id: "id do post",
-      title: "Título",
-      content: "Conteúdo",
-    };
+  const postDB = new PostDatabase;
 
-    await postDB.createPost(post.id, post.title, post.content);
-    const postFromDb = await postDB.getPostById(post.id);
 
-    expect(postFromDb).not.toBe(undefined);
-    expect(postFromDb).toEqual({
-      id: "id do post",
-      title: "Título",
-      content: "Conteúdo",
-    });
+  afterAll(async () => {
+    await postDB.deletePostById("id do post");
+    await PostDatabase.destroyConnection();
   });
+
+
+  const post = {
+    id: "1",
+    title: "Título",
+    content: "Conteúdo",
+  };
+
+  await postDB.createPost(post.id, post.title, post.content);
+  const postFromDb = await postDB.getPostById(post.id);
+
+  expect(postFromDb).not.toBe(undefined);
+  expect(postFromDb).toEqual({
+    id: "1",
+    title: "Título",
+    content: "Conteúdo",
+  });
+});

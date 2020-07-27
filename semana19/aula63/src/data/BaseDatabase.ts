@@ -22,9 +22,9 @@ export class BaseDatabase {
     }
 
     public static async destroyConnection(): Promise<void> {
-        if(BaseDatabase.connection){
-            await BaseDatabase.connection.destroy();
-            BaseDatabase.connection = null;
+        if (BaseDatabase.connection) {
+          await BaseDatabase.connection.destroy();
+          BaseDatabase.connection = null;
         }
-    }
+      }
 }

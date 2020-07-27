@@ -27,4 +27,13 @@ export class PostDatabase extends BaseDatabase {
 
         return result[0];
     }
+
+    public async deletePostById(id: string): Promise<any> {
+        const result = await this.getConnection()
+            .delete()
+            .from(PostDatabase.TABLE_NAME)
+            .where({ id });
+
+        return result[0];
+    }
 }
