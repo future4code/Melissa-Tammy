@@ -1,0 +1,39 @@
+{
+  "fullTime": [
+    {
+      "id": 1,
+      "startDate": "2020-01-20T03:00:00.000Z",
+      "endDate": "2020-10-20T03:00:00.000Z",
+      "teachers": [
+        "Prof AAAAAAAAAAAAAAAAA",
+        "Prof AAAAAAAAAAAAAAAAA"
+      ],
+      "students": [
+        "est AAAAAAAAAAAAAAAAA",
+        "est AAAAAAAAAAAAAAAAA",
+        "AAAAAAAAAAAAAAAAAAAAAA"
+      ],
+      "currentModule": 4,
+      "name": "AAAAAAAAAAAAAAAAA"
+    }
+  ],
+  "naNight": [
+    {
+      "id": 1,
+      "startDate": "2020-01-20T03:00:00.000Z",
+      "endDate": "2020-10-20T03:00:00.000Z",
+      "teachers": [
+        "prof BBBBBBBBBBBBB",
+        "prof BBBBBBBBBBBBB"
+      ],
+      "students": [
+        "est BBBBBBBBBBBBB",
+        "est BBBBBBBBBBBBB",
+        "AAAAAAAAAAAAAAAAAAAAAA",
+        "NAME_TEST"
+      ],
+      "currentModule": 4,
+      "name": "BBBBBBBBBBBBB-na-night"
+    }
+  ]
+}
