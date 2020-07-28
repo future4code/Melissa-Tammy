@@ -1,17 +1,7 @@
 import knex from "knex";
+import { BaseDatabase } from "./BaseDataBase";
 
-export class UserDatabase {
-  private connection = knex({
-    client: "mysql",
-    connection: {
-      host: process.env.DB_HOST,
-      port: 3306,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_DATABASE_NAME,
-    },
-  });
-
+export class UserDatabase extends BaseDatabase{
   private static TABLE_NAME = "User_aula55";
 
   public async createUser(
@@ -20,7 +10,7 @@ export class UserDatabase {
     password: string,
     role: string
   ): Promise<void> {
-    await this.connection
+    await this.getconnection()
       .insert({
         id,
         email,
@@ -28,28 +18,29 @@ export class UserDatabase {
         role
       })
       .into(UserDatabase.TABLE_NAME);
+      BaseDatabase.destroyConnection()
   }
 
   public async getUserByEmail(email: string): Promise<any> {
-    const result = await this.connection
+    const result = await this.getconnection()
       .select("*")
       .from(UserDatabase.TABLE_NAME)
       .where({ email });
-
+      BaseDatabase.destroyConnection()
     return result[0];
   }
 
   public async getUserById(id: string): Promise<any> {
-    const result = await this.connection
+    const result = await this.getconnection()
       .select("*")
       .from(UserDatabase.TABLE_NAME)
       .where({ id });
-
+      BaseDatabase.destroyConnection()
     return result[0];
   }
 
   public async deleteUser(id: string): Promise<any> {
-    await this.connection
+    await this.getconnection()
       .delete()
       .from(UserDatabase.TABLE_NAME)
       .where({ id });
