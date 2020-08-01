@@ -17,4 +17,10 @@ export class BandBusiness {
         const band = await bandDatabase.getBandByNameId(input);
         return band;
     }
+
+    async getBandByResponsible(input: string) {
+        const bandDatabase = new BandDatabase();
+        const band = await bandDatabase.getBandByResponsible(input);
+        return band;
+    }
 }

@@ -52,3 +52,7 @@ export interface BandInputDTO{
 export interface NameIdInputDTO{
     nameId: string
 }
+
+export interface NameInputDTO{
+    name: string
+}

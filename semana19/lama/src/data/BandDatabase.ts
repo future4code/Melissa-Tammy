@@ -30,6 +30,15 @@ export class BandDatabase extends BaseDatabase {
         SELECT * FROM ${BandDatabase.TABLE_NAME}  
         WHERE name='${nameId}' OR id='${nameId}';
     `)
+
     return result[0];
+  }
+
+  public getBandByResponsible = async (name: string): Promise<string> => {
+    const result = await this.getConnection().raw(`
+        SELECT id FROM ${BandDatabase.TABLE_NAME}  
+        WHERE responsible='${name}';
+    `)
+    return (result[0][0].id);
   }
 }
