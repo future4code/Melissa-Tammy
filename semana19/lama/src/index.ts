@@ -4,15 +4,23 @@ import express from "express";
 import { userRouter } from "./routes/userRouter";
 import { bandRouter } from "./routes/bandRouter";
 import { showRouter } from "./routes/showRouter";
+import cors from "cors";
+
+const app = express();
+app.use(cors({
+  origin: true
+}))
 
 dotenv.config();
-const app = express();
+
 
 app.use(express.json());
 
 app.use("/user", userRouter);
 app.use("/band", bandRouter);
 app.use("/show", showRouter);
+
+export default app;
 
 const server = app.listen(3000, () => {
     if (server) {
