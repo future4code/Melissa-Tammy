@@ -5,10 +5,7 @@
     "module": "commonjs",                                    
     "sourceMap": true,                     
     // "outFile": "./",                      
-    "outDir": "./build",                       
-    "rootDir": "./src",                                    
     "removeComments": true,                            
-
     /* Strict Type-Checking Options */
     "strict": true,                           
     "noImplicitAny": true,                               
